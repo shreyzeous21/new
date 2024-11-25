@@ -1,4 +1,5 @@
 import Breadcrumb from "@/components/Breadcrumb";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
 
@@ -16,8 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        {/* <Breadcrumb /> */}
+        <Breadcrumb />
         {children}
+        <Footer />
       </body>
     </html>
   );
