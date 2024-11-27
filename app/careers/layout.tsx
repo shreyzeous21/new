@@ -1,4 +1,5 @@
 import Breadcrumb from "@/components/Breadcrumb";
+import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
 
@@ -16,6 +17,7 @@ export default function CareersLayout({
     <html lang="en">
       <body>
         <Header />
+        {/* <Navbar /> */}
         <Breadcrumb />
         {children}
       </body>

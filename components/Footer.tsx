@@ -27,14 +27,36 @@ interface CapabilitiesSection {
   title: string;
   links: { text: string; href: string }[];
 }
+
 interface EmpSection {
   title: string;
   links: { text: string; href: string }[];
 }
+interface IndSection {
+  title: string;
+  links: { text: string; href: string }[];
+}
+interface AboutSection {
+  title: string;
+  links: { text: string; href: string }[];
+}
+interface ReSection {
+  title: string;
+  links: { text: string; href: string }[];
+}
+interface CareerSection {
+  title: string;
+  subTitle: string;
+  href: string;
+  links: { region: string; href: string }[];
+}
+interface GlobalSection {
+  title: string;
+  links: { region: string; href: string }[];
+}
 
 const Footer = () => {
-  const [expandedSection, setExpandedSection] = useState<string | null>(null);
-
+  const [expend, setExpend] = useState(false);
   // Social links array
   const socialLinks: SocialLink[] = [
     {
@@ -85,7 +107,6 @@ const Footer = () => {
     { text: "Raise a Grievance", href: "/grievance" },
   ];
 
-  // Capabilities sections array
   const cap: CapabilitiesSection[] = [
     {
       title: "Capabilities",
@@ -97,6 +118,7 @@ const Footer = () => {
       ],
     },
   ];
+
   const emp: EmpSection[] = [
     {
       title: "emp",
@@ -109,27 +131,117 @@ const Footer = () => {
         { text: "AI & Generative AI", href: "/ai-gi" },
         { text: "Cloud", href: "/" },
         { text: "Software", href: "/" },
-        { text: "AI", href: "/ai" },
-        { text: "AI & Generative AI", href: "/ai-gi" },
-        { text: "Cloud", href: "/" },
-        { text: "Software", href: "/" },
       ],
     },
   ];
 
-  // Function to toggle the expanded section
+  const ind: IndSection[] = [
+    {
+      title: "Industries",
+      links: [
+        { text: "Aerospace and Defense", href: "/" },
+        { text: "Automotive", href: "/" },
+        { text: "Captive Business Services", href: "/" },
+        { text: "Consumer Goods", href: "/" },
+        { text: "Energy and Utilities", href: "/" },
+        { text: "Life Sciences and Healthcare", href: "/" },
+        { text: "Manufacturing", href: "/" },
+        { text: "Mining and Natural Resources", href: "/" },
+        { text: "Oil and Gas", href: "/" },
+        { text: "Public Sector", href: "/" },
+        { text: "Retail", href: "/" },
+        { text: "Technology", href: "/" },
+        { text: "Telecom Media and Entertainment Services", href: "/" },
+        { text: "Travel, Transport, Logistics & Hospitality", href: "/" },
+        { text: "Financial Services", href: "/" },
+        { text: "Banking", href: "/" },
+        { text: "Capital Markets", href: "/" },
+        { text: "Financial Crime Compliance and Risk", href: "/" },
+        { text: "Fintech", href: "/" },
+        { text: "Insurance", href: "/" },
+      ],
+    },
+  ];
+  const about: AboutSection[] = [
+    {
+      title: "About Us",
+      links: [
+        { text: "About Us Overview", href: "/" },
+        { text: "Analyst Recognitions", href: "/" },
+        { text: "Annual Report 2024", href: "/" },
+        { text: "Awards and Recognition", href: "/" },
+        { text: "Code of Business Ethics and Conduct", href: "/" },
+        { text: "Corporate Social Responsibility", href: "/" },
+        { text: "Diversity, Equity and Inclusion", href: "/" },
+        { text: "Global Presence", href: "/" },
+        { text: "Investor Relations", href: "/" },
+        { text: "Leadership", href: "/" },
+        { text: "Newsroom", href: "/" },
+        { text: "Privacy Trust Center", href: "/" },
+        { text: "Strategic Alliances", href: "/" },
+        { text: "Supercharging Progress", href: "/" },
+        { text: "Sustainability", href: "/" },
+        { text: "Sustainability Report 2024", href: "/" },
+      ],
+    },
+  ];
+  const res: ReSection[] = [
+    {
+      title: "Resources",
+      links: [
+        { text: "Thread and insights", href: "/" },
+        { text: "Case Studies", href: "/" },
+        { text: "Event adn webinars", href: "/" },
+      ],
+    },
+  ];
 
-  const handleToggle = (index: number) => {
-    setExpandedSection((prevState) =>
-      prevState === index.toString() ? null : index.toString()
-    );
-  };
+  const careers: CareerSection[] = [
+    {
+      title: "Careers",
+      href: "/",
+      subTitle: "Careers Overview",
+      links: [
+        {
+          region: "Americas",
+          href: "/americas",
+        },
+        {
+          region: "Asia Pacific",
+          href: "/asia-pacific",
+        },
+        {
+          region: "Europe",
+          href: "/europe",
+        },
+        {
+          region: "India",
+          href: "/india",
+        },
+      ],
+    },
+  ];
 
-  const handleToggle1 = (index: number) => {
-    setExpandedSection((prevState) =>
-      prevState === index.toString() ? null : index.toString()
-    );
-  };
+  const globalPresence: GlobalSection[] = [
+    {
+      title: "Global",
+      links: [
+        {
+          region: "Americas",
+          href: "/global-presence/americas",
+        },
+        {
+          region: "EMEA",
+          href: "/global-presence/emea",
+        },
+        {
+          region: "APAC",
+          href: "/global-presence/apac",
+        },
+      ],
+    },
+  ];
+
   return (
     <footer className="h-auto text-white justify-center lg:mx-auto flex flex-col bg-[#0b0a23]">
       <div className="flex flex-col lg:mx-auto max-w-7xl mx-4 lg:w-full">
@@ -144,115 +256,117 @@ const Footer = () => {
           <div className="font-semibold text-xl">
             {cap.map((cap, index) => (
               <div key={index} className="mb-4">
-                <h1
-                  className="mb-2 cursor-pointer"
-                  onClick={() => handleToggle(index)}
-                >
-                  {cap.title}
-                </h1>
-                <div
-                  className={`flex flex-col ${
-                    expandedSection === index.toString() ? "block" : "hidden"
-                  } sm:block`}
-                >
-                  <ul>
-                    {cap.links.map((link, linkIndex) => (
-                      <Link key={linkIndex} href={link.href}>
-                        <li className="py-1">{link.text}</li>
-                      </Link>
-                    ))}
-                  </ul>
-                </div>
+                <h1 className="mb-2">{cap.title}</h1>
+                <ul>
+                  {cap.links.map((link, linkIndex) => (
+                    <Link key={linkIndex} href={link.href}>
+                      <li className="py-1">{link.text}</li>
+                    </Link>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
-          {/* col 1 */}
 
           {/* col 2 */}
           <div className="text-sm ">
             {emp.map((emp, index) => (
               <div key={index} className="mb-4 ">
-                <h1
-                  className="mb-2 text-xl"
-                  onClick={() => handleToggle1(index)}
-                >
-                  {emp.title}
-                </h1>
-                <div
-                  className={`flex flex-col ${
-                    expandedSection === index.toString() ? "block" : "hidden"
-                  } sm:block`}
-                >
-                  <ul>
-                    {emp.links.map((link, linkIndex) => (
-                      <Link key={linkIndex} href={link.href}>
-                        <li className="py-1">{link.text}</li>
-                      </Link>
-                    ))}
-                  </ul>
-                </div>
+                <h1 className="mb-2 text-xl text-[#0b0a23]">{emp.title}</h1>
+                <ul>
+                  {emp.links.map((link, linkIndex) => (
+                    <Link key={linkIndex} href={link.href}>
+                      <li className="">{link.text}</li>
+                    </Link>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
-          {/* col 2 */}
 
           {/* col 3 */}
-          <div className="">
-            <h1 className="mb-2 text-xl">Industries</h1>
-            <div className="flex flex-col">
-              <ul>
-                <Link href={"/"}>
-                  <li>AI</li>
-                </Link>
-                <Link href={"/"}>
-                  <li>AI</li>
-                </Link>
-                <Link href={"/"}>
-                  <li>AI</li>
-                </Link>
-              </ul>
-            </div>
+          <div className="text-sm ">
+            {ind.map((ind, index) => (
+              <div key={index} className="mb-4 ">
+                <h1 className="mb-2 text-xl font-bold">{ind.title}</h1>
+                <ul>
+                  {ind.links.map((link, linkIndex) => (
+                    <Link key={linkIndex} href={link.href}>
+                      <li className="">{link.text}</li>
+                    </Link>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-          {/* col 3 */}
 
           {/* col 4 */}
-          <div className="text-sm">
-            <h1 className="mb-4  text-xl ">Ecosystem</h1>
-            <h1 className="mb-2  text-xl">About</h1>
-            <div className="flex flex-col">
-              <ul>
-                <Link href={"/"}>
-                  <li>AI</li>
-                </Link>
-                <Link href={"/"}>
-                  <li>AI</li>
-                </Link>
-                <Link href={"/"}>
-                  <li>AI</li>
-                </Link>
-              </ul>
-            </div>
+          <div className="text-sm ">
+            <Link href={"/eco"} className="font-bold text-xl">
+              Ecosystem
+            </Link>
+            {about.map((about, index) => (
+              <div key={index} className="mb-4 ">
+                <h1 className="mb-2 text-xl font-bold">{about.title}</h1>
+                <ul>
+                  {about.links.map((link, linkIndex) => (
+                    <Link key={linkIndex} href={link.href}>
+                      <li className="">{link.text}</li>
+                    </Link>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            {res.map((res, index) => (
+              <div key={index} className="mb-4 ">
+                <h1 className="mb-2 text-xl font-bold">{res.title}</h1>
+                <ul>
+                  {res.links.map((link, linkIndex) => (
+                    <Link key={linkIndex} href={link.href}>
+                      <li className="">{link.text}</li>
+                    </Link>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-          {/* col 4 */}
 
           {/* col 5 */}
-          <div className="text-sm">
-            <h1 className="mb-2 text-[#0b0a23] text-xl">Capabilities</h1>
-            <div className="flex flex-col">
-              <ul>
-                <Link href={"/"}>
-                  <li>AI</li>
-                </Link>
-                <Link href={"/"}>
-                  <li>AI</li>
-                </Link>
-                <Link href={"/"}>
-                  <li>AI</li>
-                </Link>
-              </ul>
+          <div className="text-sm ">
+            <div className="flex flex-col gap-10">
+              <div>
+                {careers.map((careers, index) => (
+                  <div key={index} className="mb-4 ">
+                    <h1 className="mb-2 text-xl font-bold">{careers.title}</h1>
+                    <h2 className="font-semibold mb-2">{careers.subTitle}</h2>
+                    <ul>
+                      {careers.links.map((link, linkIndex) => (
+                        <Link key={linkIndex} href={link.href}>
+                          <li className="">{link.region}</li>
+                        </Link>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <div className="">
+                {globalPresence.map((globalPresence, index) => (
+                  <div key={index} className="mb-4">
+                    <h1 className="mb-2 font-bold text-xl">
+                      {globalPresence.title}
+                    </h1>
+                    <ul>
+                      {globalPresence.links.map((link, linkIndex) => (
+                        <Link key={linkIndex} href={link.href}>
+                          <li className="py-1">{link.region}</li>
+                        </Link>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          {/* col 5 */}
         </div>
         {/* 2 - Capabilities Grid */}
 
@@ -269,16 +383,15 @@ const Footer = () => {
             </span>
           ))}
         </div>
-        {/* 3 */}
 
         {/* 4 - Footer Links */}
         <div className="flex flex-col text-gray-400 text-sm py-4 justify-center max-w-5xl mx-auto w-full">
-          <div className="flex lg:flex-row flex-col justify-center items-center lg:justify-between gap-4">
+          <div className="flex lg:flex-row flex-col items-center justify-center lg:gap-10 gap-4">
             <span>Copyright © 2024 CXP Technologies</span>
 
             <div className="flex flex-wrap justify-center gap-2">
               {footerLinks.map((link, index) => (
-                <span key={index} className="">
+                <span key={index}>
                   <a href={link.href} className="hover:text-blue-300">
                     {link.text}
                   </a>
@@ -296,7 +409,6 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        {/* 4 */}
       </div>
     </footer>
   );

@@ -1,131 +1,196 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Trees, Code } from "lucide-react";
 
 const cardData = [
   {
     id: 1,
-    icon: <Trees size={48} className="text-green-500" />, // Increased icon size
-    title: "Sustainability",
+    icon: "/digital/icon-cost-effective.png",
+    title: "Cost Effective",
     description:
-      "See how we accelerate our contributions to a sustainable and inclusive world.",
-    link: "Discover more",
+      "Cut data center construction costs by eliminating chillers, CRACs, CRAHs, raised floors and downsizing power & backup infrastructure.",
+    link: "Learn more",
   },
   {
     id: 2,
-    icon: <Code size={48} className="text-green-500" />, // Increased icon size
-    title: "Software",
+    icon: "/digital/icon-future-proof.png",
+    title: "Future Proof",
     description:
-      "Explore our agnostic software portfolio providing our customers with the right software for their needs.",
-    link: "Explore our software offer",
+      "Cool the most powerful servers — up to 368 kW/rack —and capitalize on emerging advanced processing applications.",
+    link: "Learn more",
   },
   {
     id: 3,
-    icon: <Trees size={48} className="text-green-500" />, // Increased icon size
-    title: "Innovation",
+    icon: "/digital/icon-scaleable.png",
+    title: "Scaleable",
     description:
-      "Innovate with tailored solutions designed for modern challenges.",
-    link: "Learn about innovation",
+      "Reduce planning & forecasting. Easily add capacity as your operation grows.",
+    link: "Learn more",
   },
   {
     id: 4,
-    icon: <Code size={48} className="text-green-500" />, // Increased icon size
-    title: "Growth",
+    icon: "/digital/icon-agile.png",
+    title: "Agile",
     description:
-      "Empower your business growth with our strategic insights and tools.",
-    link: "See growth insights",
+      "GRC liquid immersion cooling solutions can be located in virtually any environment—and be up and running within weeks, not months.",
+    link: "Learn more",
+  },
+  {
+    id: 5,
+    icon: "/digital/icon-resilient.png",
+    title: "Resilient",
+    description:
+      "Eliminate fan vibrations, dust and moisture contamination, oxidation and static risks, and remove data center hot spots.",
+    link: "Learn more",
+  },
+  {
+    id: 6,
+    icon: "/digital/icon-efficient.png",
+    title: "Resilient",
+    description:
+      "Experience a <1.03 pPUE, reduce server power use by an average of 11%, and cut power consumed for IT cooling by up to 90%.",
+    link: "Learn more",
   },
 ];
 
 const DigitalPartner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const visibleCards = 3; // Number of cards visible at once
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleNext = () => {
-    if (currentIndex + visibleCards < cardData.length) {
-      setCurrentIndex(currentIndex + 1);
-    }
+    const visibleCards = isSmallScreen ? 1 : 3;
+    setCurrentIndex((prevIndex) =>
+      prevIndex + visibleCards < cardData.length ? prevIndex + 1 : prevIndex
+    );
   };
 
   const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
+    setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : 0));
   };
 
+  const visibleCards = isSmallScreen ? 1 : 3;
+
   return (
-    <div className="bg-white h-auto mx-auto w-full max-w-7xl justify-center py-10 flex flex-col">
-      {/* Header */}
-      <div className="flex lg:flex-row flex-col lg:justify-between justify-center items-center w-full mx-auto h-full mb-6">
-        <h1 className="text-4xl text-center font-bold mb-4 lg:mb-0">
-          Your digital partner for Sustainability and Efficiency
-        </h1>
-        <span className="lg:flex hidden flex-row gap-4">
+    <div className="bg-white h-auto mx-auto w-full max-w-7xl py-10 flex flex-col">
+      {/* Header Section */}
+      <div className="flex flex-col lg:flex-row lg:justify-between items-center w-full mb-6">
+        <div className="flex flex-col text-center lg:text-start w-full justify-start mx-5 ">
+          <h1 className="text-4xl  font-semibold uppercase text-blue-900 mb-4 lg:mb-0">
+            Green Revolution Cooling
+          </h1>
+          <p className="mt-2">
+            Redefining the Efficiency and Sustainability of Data Center Cooling
+          </p>
+        </div>
+        <div className="hidden lg:flex gap-4">
           <ArrowLeft
             onClick={handlePrev}
-            className="cursor-pointer text-gray-500 hover:text-black"
+            className={`cursor-pointer ${
+              currentIndex === 0 ? "text-gray-300" : "text-black"
+            }`}
           />
           <ArrowRight
             onClick={handleNext}
-            className="cursor-pointer text-gray-500 hover:text-black"
+            className={`cursor-pointer ${
+              currentIndex + visibleCards >= cardData.length
+                ? "text-gray-300"
+                : "text-black"
+            }`}
           />
-        </span>
-      </div>
-
-      {/* Carousel for Larger Screens and Stack for Mobile */}
-      <div className="relative mx-10 font-semibold py-4 lg:w-full overflow-hidden">
-        {/* For mobile (small screens), display cards in a column */}
-        <div className="lg:hidden gap-10 flex flex-col">
-          {cardData.map((card) => (
-            <motion.div
-              key={card.id}
-              whileHover={{ scale: 1.05, y: -10 }} // Floating effect
-              className="bg-gray-100 cursor-pointer rounded-lg shadow-lg p-6 w-full h-[320px] text-left flex flex-col justify-between"
-            >
-              <motion.div className="mb-4">{card.icon}</motion.div>
-              <h2 className="text-xl font-semibold mb-2">{card.title}</h2>
-              <p className="text-gray-600 mb-4">{card.description}</p>
-              <a
-                href="#"
-                className="text-blue-500 hover:underline font-medium text-sm"
-              >
-                {card.link} →
-              </a>
-            </motion.div>
-          ))}
         </div>
-
-        {/* For tablets and larger screens (lg and above), show carousel */}
-        <motion.div
-          className="lg:flex hidden mx-5 gap-6"
-          initial={{ x: 0 }}
-          animate={{ x: -currentIndex * (100 / visibleCards) + "%" }}
-          transition={{ duration: 0.5 }}
-          style={{
-            width: `${(cardData.length / visibleCards) * 100}%`,
-          }}
-        >
-          {cardData.map((card) => (
-            <motion.div
-              key={card.id}
-              whileHover={{ scale: 1.05, y: -10 }} // Floating effect
-              className="bg-gray-100 cursor-pointer rounded-lg shadow-lg p-6 w-full sm:w-[45vw] md:w-[30vw] lg:w-[25vw] h-[320px] flex-shrink-0 text-left flex flex-col justify-between"
-            >
-              <motion.div className="mb-4">{card.icon}</motion.div>
-              <h2 className="text-xl font-semibold mb-2">{card.title}</h2>
-              <p className="text-gray-600 mb-4">{card.description}</p>
-              <a
-                href="#"
-                className="text-blue-500 hover:underline font-medium text-sm"
-              >
-                {card.link} →
-              </a>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
+
+      {/* Card Section */}
+      <div className="relative py-10 px-5 overflow-hidden">
+        {isSmallScreen ? (
+          <div className="flex flex-col gap-10">
+            {cardData.map((card) => (
+              <motion.div
+                key={card.id}
+                whileHover={{ scale: 1.05, y: -10 }}
+                className="bg-gray-100 rounded-lg shadow-lg p-6 h-[320px] flex flex-col justify-between"
+              >
+                <div>{card.icon}</div>
+                <h2 className="text-xl font-semibold">{card.title}</h2>
+                <p className="text-gray-600">{card.description}</p>
+                <a
+                  href="#"
+                  className="text-black hover:text-green-500 font-medium"
+                >
+                  {card.link} →
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <motion.div
+            className="flex gap-10"
+            initial={{ x: 0 }}
+            animate={{ x: -currentIndex * (100 / visibleCards) + "%" }}
+            transition={{ duration: 0.5 }}
+            style={{
+              width: `${(cardData.length / visibleCards) * 100}%`,
+            }}
+          >
+            {cardData.map((card) => (
+              <motion.div
+                key={card.id}
+                whileHover={{ scale: 1.05, y: -10 }}
+                className="bg-gray-100 rounded-lg shadow-lg p-6 w-full sm:w-[45vw] md:w-[30vw] lg:w-[25vw] flex-shrink-0 h-[320px] flex flex-col justify-between"
+              >
+                <img
+                  src={card.icon}
+                  alt={card.title}
+                  className="w-[7rem] h-auto"
+                />
+                <h2 className="text-xl font-semibold">{card.title}</h2>
+                <p className="text-gray-600 text-sm ">{card.description}</p>
+                <a
+                  href="#"
+                  className="text-black hover:text-green-500 font-medium"
+                >
+                  {card.link} →
+                </a>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </div>
+
+      {/* Navigation for Small Screens */}
+      {isSmallScreen && (
+        <div className="flex justify-between mt-6">
+          <ArrowLeft
+            onClick={handlePrev}
+            className={`cursor-pointer ${
+              currentIndex === 0 ? "text-gray-300" : "text-black"
+            }`}
+          />
+          <ArrowRight
+            onClick={handleNext}
+            className={`cursor-pointer ${
+              currentIndex + visibleCards >= cardData.length
+                ? "text-gray-300"
+                : "text-black"
+            }`}
+          />
+        </div>
+      )}
     </div>
   );
 };

@@ -75,8 +75,34 @@ const Header = () => {
       },
     ],
     "/": [
-      { name: "Driving", path: "/driving" },
-      { name: "SBL", path: "/sbl" },
+      {
+        name: "Driving",
+        path: "/driving/jobs",
+        dropdownLinks: [
+          {
+            name: "Driving Energy Innovation",
+            text: "We have a bold vision for what energy can be–and with our technology and expertise, we can deliver on it.",
+            path: "/careers/jobs/engineering",
+          },
+          { name: "Marketing", path: "/careers/jobs/marketing" },
+          { name: "dw", path: "/careers/jobs/marketing" },
+          { name: "Markewdding", path: "/careers/jobs/marketing" },
+        ],
+      },
+      {
+        name: "Sbl",
+        path: "/driving/jobs",
+        dropdownLinks: [
+          {
+            name: "Driving Energy Innovation",
+            text: "We have a bold vision for what energy can be–and with our technology and expertise, we can deliver on it.",
+            path: "/careers/jobs/engineering",
+          },
+          { name: "Marketing", path: "/careers/jobs/marketing" },
+          { name: "dw", path: "/careers/jobs/marketing" },
+          { name: "Markewdding", path: "/careers/jobs/marketing" },
+        ],
+      },
       { name: "Products", path: "/products" },
     ],
   };
@@ -89,13 +115,18 @@ const Header = () => {
 
   const isActive = (linkPath: string) => pathname === linkPath;
 
-  const toggleDropdown = (index: number) => {
-    setDropdownIndex((prev) => (prev === index ? null : index));
+  const handleMenuClick = (index: number) => {
+    // Toggle the dropdown menu when a menu item is clicked
+    if (dropdownIndex === index) {
+      setDropdownIndex(null); // Close the dropdown if the same item is clicked again
+    } else {
+      setDropdownIndex(index); // Open the clicked dropdown
+    }
   };
 
   return (
-    <div className="lg:w-full h-auto flex lg:mx-auto  justify-center  w-full z-50">
-      <div className="flex flex-row justify-start w-full ">
+    <div className="lg:w-full h-auto flex mx-5 lg:mx-auto justify-center w-full z-50 ">
+      <div className="flex flex-row justify-start w-full">
         {/* Logo Section */}
         <Link
           href={"/"}
@@ -173,71 +204,127 @@ const Header = () => {
               >
                 <User />
               </Link>
-              <Link
-                href="/search"
-                className={`p-4 ${
-                  isActive("/search")
-                    ? "bg-white text-black"
-                    : "hover:underline"
-                }`}
-              >
+              <span className="p-4">
                 <Search />
-              </Link>
+              </span>
             </div>
           </div>
 
           {/* Sub-navigation with Dropdowns */}
-          <div className="h-full lg:flex hidden flex-row justify-between bg-white text-black w-full items-center">
-            <div className="flex justify-center space-x-3 w-auto">
-              {activeSubNav.map(
-                (
-                  link: {
-                    name: string;
-                    path: string;
-                    dropdownLinks?: { name: string; path: string }[];
-                  },
-                  index: number
-                ) => (
-                  <div key={index} className="relative">
-                    <button
-                      onClick={() => toggleDropdown(index)}
-                      className={`p-4 ${
-                        isActive(link.path)
-                          ? "bg-gray-200 text-black"
-                          : "hover:underline"
-                      }`}
+          {/* Render the full dropdown mega menu only on the home page */}
+          {pathname === "/" ? (
+            <div className="h-full lg:flex hidden flex-row justify-between bg-white text-black w-auto items-center">
+              <div className="flex justify-center space-x-3 w-auto">
+                {activeSubNav.map(
+                  (
+                    link: {
+                      name: string;
+                      path: string;
+                      dropdownLinks?: { name: string; path: string }[];
+                    },
+                    index: number
+                  ) => (
+                    <div
+                      key={index}
+                      className="relative"
+                      onClick={() => handleMenuClick(index)}
                     >
-                      {link.name}
-                    </button>
-                    {/* Dropdown Menu */}
-                    <AnimatePresence>
-                      {dropdownIndex === index && link.dropdownLinks && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          className="absolute top-full left-0 w-64 bg-white text-black shadow-lg p-4 z-50"
-                        >
-                          <ul>
-                            {link.dropdownLinks.map((dropdown, i) => (
-                              <li key={i}>
+                      <button
+                        className={`p-4 ${
+                          isActive(link.path)
+                            ? "bg-gray-200 text-black"
+                            : "hover:underline"
+                        }`}
+                      >
+                        {link.name}
+                      </button>
+                      {/* Dropdown Menu */}
+                      <AnimatePresence>
+                        {dropdownIndex === index && link.dropdownLinks && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            className="absolute top-full flex mx-auto items-center left-0 w-[70vw] bg-white text-black shadow-lg p-6 z-50"
+                          >
+                            <div className="flex flex-row justify-start relative overflow-x-hidden  z-10 left-0 w-[80vw] h-[70vh] ">
+                              {link.dropdownLinks.map((dropdown, i) => (
+                                <div
+                                  key={i}
+                                  className="flex flex-col text-center"
+                                >
+                                  <Link
+                                    href={dropdown.path}
+                                    className="block px-4 py-2 w-auto hover:bg-gray-100 whitespace-nowrap"
+                                  >
+                                    {dropdown.name}
+                                  </Link>
+                                </div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
+          ) : (
+            <div className="h-full lg:flex hidden flex-row justify-between bg-white text-black w-full items-center">
+              <div className="flex justify-center space-x-3 w-auto">
+                {activeSubNav.map(
+                  (
+                    link: {
+                      name: string;
+                      path: string;
+                      dropdownLinks?: { name: string; path: string }[];
+                    },
+                    index: number
+                  ) => (
+                    <div
+                      key={index}
+                      className="relative"
+                      onMouseEnter={() => handleMenuClick(index)} // For non-home pages, keep mouseEnter logic
+                    >
+                      <button
+                        className={`p-4 ${
+                          isActive(link.path)
+                            ? "bg-gray-200 text-black"
+                            : "hover:underline"
+                        }`}
+                      >
+                        {link.name}
+                      </button>
+                      {/* Dropdown Menu */}
+                      <AnimatePresence>
+                        {dropdownIndex === index && link.dropdownLinks && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            className="absolute top-full flex mx-auto items-center left-0 w-auto bg-white text-black shadow-lg p-6 z-50"
+                          >
+                            <div className="grid grid-cols-1 gap-4 w-[12vw] items-center">
+                              {link.dropdownLinks.map((dropdown, i) => (
                                 <Link
+                                  key={i}
                                   href={dropdown.path}
-                                  className="block px-4 py-2 hover:bg-gray-100"
+                                  className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
                                 >
                                   {dropdown.name}
                                 </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                )
-              )}
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  )
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

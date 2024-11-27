@@ -9,7 +9,7 @@ const CareersHome = () => {
       <TextParallaxContent
         imgUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         subheading="Join Us"
-        heading="Careers at Schneider Electric"
+        heading="Careers at GRC"
       >
         <ExampleContent />
       </TextParallaxContent>
@@ -114,19 +114,19 @@ const OverlayCopy = ({
 
 const ExampleContent = () => (
   <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
-    <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
+    <h2 className="col-span-1 text-4xl font-bold md:col-span-4">
       Join Our Team Today
     </h2>
     <div className="col-span-1 md:col-span-8">
-      <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
-        Discover exciting career opportunities at Schneider Electric and be part
-        of a team that`s shaping the future of energy and automation.
+      <p className="mb-4 text-lg">
+        Discover exciting career opportunities at GRC and be part of a team
+        that`s shaping the future of energy and automation.
       </p>
-      <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
+      <p className="mb-8 text-lg">
         With innovation at the heart of everything we do, we offer a culture of
         inclusivity and professional growth.
       </p>
-      <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit">
+      <button className="w-full rounded bg-orange-500 px-4 py-4 text-xl text-white transition-colors hover:bg-green-500 md:w-fit">
         Explore Careers <ArrowUpRight className="inline" />
       </button>
     </div>

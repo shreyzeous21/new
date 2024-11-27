@@ -13,18 +13,25 @@ const Hero = () => {
 
   // State to track the current image index
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true); // State to control the slideshow
 
-  // Change the image every 3 seconds
+  // Change the image every 3 seconds if the slideshow is playing
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 3000); // 3000ms = 3 seconds
+    if (isPlaying) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+      }, 3000); // 3000ms = 3 seconds
 
-    return () => clearInterval(interval); // Cleanup on component unmount
-  }, [slides.length]);
+      return () => clearInterval(interval); // Cleanup on component unmount or when isPlaying changes
+    }
+  }, [isPlaying, slides.length]); // Dependency on isPlaying
+
+  const togglePlayPause = () => {
+    setIsPlaying((prev) => !prev); // Toggle play/pause state
+  };
 
   return (
-    <div className="relative w-full h-screen bg-black text-white flex flex-col items-center">
+    <div className="relative w-full h-[80vh] bg-black text-white flex flex-col items-center">
       {/* Container for the sliding images */}
       <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
         {/* Animated Image Section */}
@@ -46,29 +53,47 @@ const Hero = () => {
         </motion.div>
       </div>
 
+      {/* Buttons for Image Names */}
+      <div className="absolute bottom-4 z-10 flex justify-center w-full gap-4">
+        {slides.map((slide, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)} // Set the active index on button click
+            className={`text-sm md:text-base py-2 px-4 rounded-md transition duration-300 
+              ${
+                currentIndex === index
+                  ? "bg-purple-600 text-white"
+                  : "bg-transparent border border-gray-300 text-gray-300 hover:bg-purple-600 hover:text-white"
+              }`}
+          >
+            {slide.imageName}
+          </button>
+        ))}
+      </div>
+
       {/* Text Section */}
       <div
-        className="
-          absolute bottom-10 left-4 w-[90%] h-auto 
+        className="absolute bottom-10 left-4 w-[90%] h-auto 
           lg:top-1/2 md:left-0 md:w-1/3 md:h-1/3 
-          z-10 flex flex-col items-center justify-center p-4 md:p-6
-        "
+          z-10 flex flex-col items-center justify-center p-4 md:p-6"
       >
         <a
           href={slides[currentIndex].link} // Dynamic link based on current image
-          className="
-            bg-purple-600 text-white text-sm md:text-base 
+          className="bg-purple-600 text-white text-sm md:text-base 
             font-semibold px-4 py-2 md:px-6 md:py-3 
             rounded-md shadow-md hover:bg-purple-700 
-            transition duration-300
-          "
+            transition duration-300"
         >
           Learn More
         </a>
-        {/* Image Name */}
-        <p className="mt-4 text-xs md:text-sm text-gray-300">
-          {slides[currentIndex].imageName}
-        </p>
+
+        {/* Play/Pause Button */}
+        {/* <button
+          onClick={togglePlayPause}
+          className="mt-4 bg-purple-600 text-white py-2 px-4 rounded-md transition duration-300 hover:bg-purple-700"
+        >
+          {isPlaying ? "Pause" : "Play"} Slide Show
+        </button> */}
       </div>
     </div>
   );
