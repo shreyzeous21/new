@@ -7,8 +7,9 @@ const Hero = () => {
   // Array of images with associated links and names
   const slides = [
     { src: "/img1.png", link: "/learn-more-1", imageName: "Image One" },
-    { src: "/img2.png", link: "/learn-more-2", imageName: "Image Two" },
-    { src: "/img3.png", link: "/learn-more-3", imageName: "Image Three" },
+    { src: "/img2.webp", link: "/learn-more-2", imageName: "Image Two" },
+    { src: "/img3.webp", link: "/learn-more-3", imageName: "Image Three" },
+    { src: "/img4.webp", link: "/learn-more-4", imageName: "Image Four" },
   ];
 
   // State to track the current image index
@@ -48,7 +49,7 @@ const Hero = () => {
             alt={slides[currentIndex].imageName}
             layout="fill"
             objectFit="cover"
-            className="object-cover"
+            className="object-cover opacity-60"
           />
         </motion.div>
       </div>
@@ -59,11 +60,11 @@ const Hero = () => {
           <button
             key={index}
             onClick={() => setCurrentIndex(index)} // Set the active index on button click
-            className={`text-sm md:text-base py-2 px-4 rounded-md transition duration-300 
+            className={`text-sm md:text-base py-2 px-4 rounded-md transition duration-300  
               ${
                 currentIndex === index
-                  ? "bg-purple-600 text-white"
-                  : "bg-transparent border border-gray-300 text-gray-300 hover:bg-purple-600 hover:text-white"
+                  ? "bg-green-500 text-white"
+                  : "bg-transparent border border-gray-300 text-white hover:bg-green-500 hover:text-white"
               }`}
           >
             {slide.imageName}
@@ -79,9 +80,9 @@ const Hero = () => {
       >
         <a
           href={slides[currentIndex].link} // Dynamic link based on current image
-          className="bg-purple-600 text-white text-sm md:text-base 
+          className="bg-green-600 text-white text-sm md:text-base 
             font-semibold px-4 py-2 md:px-6 md:py-3 
-            rounded-md shadow-md hover:bg-purple-700 
+            rounded-md shadow-md hover:bg-green-700 
             transition duration-300"
         >
           Learn More

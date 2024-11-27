@@ -96,7 +96,7 @@ const Tech = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 w-full">
           {cards.map((card) => (
             <Link key={card.id} href={card.link} legacyBehavior>
-              <a className="relative bg-white border border-gray-200 shadow-sm p-6 flex flex-col gap-20  justify-between transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 group">
+              <a className="relative bg-white border border-gray-200 shadow-sm p-6 flex flex-col gap-20  justify-between transition-all duration-300 hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-900 group">
                 <div className="relative h-10 flex  ">
                   <h3 className="absolute text-lg text-gray-700 group-hover:text-white  text-start transition-all duration-300 group-hover:-translate-y-6 group-hover:opacity-0">
                     {card.title}
