@@ -98,10 +98,10 @@ const Tech = () => {
             <Link key={card.id} href={card.link} legacyBehavior>
               <a className="relative bg-white border border-gray-200 shadow-sm p-6 flex flex-col gap-20  justify-between transition-all duration-300 hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-900 group">
                 <div className="relative h-10 flex  ">
-                  <h3 className="absolute text-lg text-gray-700 group-hover:text-white  text-start transition-all duration-300 group-hover:-translate-y-6 group-hover:opacity-0">
+                  <h3 className="absolute text-lg text-black group-hover:text-white  text-start transition-all duration-300 group-hover:-translate-y-6 group-hover:opacity-0">
                     {card.title}
                   </h3>
-                  <p className="absolute text-sm text-gray-700 group-hover:text-white font-medium  opacity-0 transition-all duration-300 translate-y-6 group-hover:translate-y-0 group-hover:opacity-100">
+                  <p className="absolute text-sm text-black group-hover:text-white font-medium  opacity-0 transition-all duration-300 translate-y-6 group-hover:translate-y-0 group-hover:opacity-100">
                     {card.hoverText}
                   </p>
                 </div>
