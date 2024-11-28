@@ -5,7 +5,6 @@ import {
   ArrowRight,
   ArrowRightCircle,
   ArrowUpRight,
-  Share,
 } from "lucide-react";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
