@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import {
   Facebook,
   Twitter,
@@ -110,22 +110,6 @@ const Footer = () => {
       links: [
         { text: "ITE & Solutions Provider Partners", href: "/" },
         { text: "ElectroSafe Fluid Partner Program", href: "/" },
-      ],
-    },
-  ];
-
-  const emp: EmpSection[] = [
-    {
-      title: "emp",
-      links: [
-        { text: "AI", href: "/ai" },
-        { text: "AI & Generative AI", href: "/ai-gi" },
-        { text: "Cloud", href: "/" },
-        { text: "Software", href: "/" },
-        { text: "AI", href: "/ai" },
-        { text: "AI & Generative AI", href: "/ai-gi" },
-        { text: "Cloud", href: "/" },
-        { text: "Software", href: "/" },
       ],
     },
   ];
