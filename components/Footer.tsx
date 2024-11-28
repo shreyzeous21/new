@@ -28,10 +28,6 @@ interface CapabilitiesSection {
   links: { text: string; href: string }[];
 }
 
-interface EmpSection {
-  title: string;
-  links: { text: string; href: string }[];
-}
 interface IndSection {
   title: string;
   links: { text: string; href: string }[];
