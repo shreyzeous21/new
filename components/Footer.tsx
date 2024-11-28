@@ -56,7 +56,7 @@ interface GlobalSection {
 }
 
 const Footer = () => {
-  const [expend, setExpend] = useState(false);
+  // const [expend, setExpend] = useState(false);
   // Social links array
   const socialLinks: SocialLink[] = [
     {

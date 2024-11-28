@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const pathname = usePathname();
-  const [dropdownIndex, setDropdownIndex] = useState<number | null>(null);
+  const [dropdownIndex] = useState<number | null>(null);
 
   const subNavLinks = {
     "/company": [
