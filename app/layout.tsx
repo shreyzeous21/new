@@ -18,7 +18,6 @@ export default function RootLayout({
       </head>
       <body className={`${font.className} antialiased`}>
         <Header />
-        {/* <Navbar /> */}
         <Breadcrumb />
         {children}
         <Footer />
