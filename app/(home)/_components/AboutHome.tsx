@@ -18,7 +18,7 @@ const AboutHome = () => {
   return (
     <div className="py-4 lg:w-full h-auto flex flex-col max-w-7xl lg:mx-auto mx-4 justify-center">
       {/* Section Title */}
-      <h2 className="text-4xl font-bold mb-6">About GRC</h2>
+      <h2 className="text-4xl font-bold text-[#243765]  mb-6">About GRC</h2>
 
       {/* Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

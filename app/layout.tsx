@@ -1,7 +1,10 @@
-import { Poppins } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Breadcrumb from "@/components/Breadcrumb";
+import Footer from "@/components/Footer";
 
-const font = Poppins({ weight: "400", subsets: ["latin"] });
+const font = Raleway({ weight: "500", subsets: ["cyrillic"] });
 
 export default function RootLayout({
   children,
@@ -10,7 +13,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${font.className} antialiased`}>{children}</body>
+      <head>
+        <title>GRC</title>
+      </head>
+      <body className={`${font.className} antialiased`}>
+        <Header />
+        {/* <Navbar /> */}
+        <Breadcrumb />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

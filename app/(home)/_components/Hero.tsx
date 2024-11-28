@@ -4,45 +4,86 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const Hero = () => {
-  // Array of images with associated links and names
   const slides = [
-    { src: "/img1.png", link: "/learn-more-1", imageName: "Image One" },
-    { src: "/img2.webp", link: "/learn-more-2", imageName: "Image Two" },
-    { src: "/img3.webp", link: "/learn-more-3", imageName: "Image Three" },
-    { src: "/img4.webp", link: "/learn-more-4", imageName: "Image Four" },
+    {
+      src: "/img1.png",
+      link: "/learn-more-1",
+      imageName: "Image One",
+      text: {
+        desktop: "Increase Performance. Enhance Sustainability. Optimize TCO.",
+        mobile: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      },
+    },
+    {
+      src: "/img2.webp",
+      link: "/learn-more-2",
+      imageName: "Image Two",
+      text: {
+        desktop: "Increase Performance. Enhance Sustainability. Optimize TCO.",
+        mobile: "Sed do eiusmod tempor incididunt ut labore.",
+      },
+    },
+    {
+      src: "/img3.webp",
+      link: "/learn-more-3",
+      imageName: "Image Three",
+      text: {
+        desktop: "Increase Performance. Enhance Sustainability. Optimize TCO.",
+        mobile: "Duis aute irure dolor in reprehenderit.",
+      },
+    },
+    {
+      src: "/img4.webp",
+      link: "/learn-more-4",
+      imageName: "Image Four",
+      text: {
+        desktop: "Increase Performance. Enhance Sustainability. Optimize TCO.",
+        mobile: "Excepteur sint occaecat cupidatat non proident.",
+      },
+    },
   ];
 
-  // State to track the current image index
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true); // State to control the slideshow
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMobile, setIsMobile] = useState(false); // State to track device type
 
   // Change the image every 3 seconds if the slideshow is playing
   useEffect(() => {
     if (isPlaying) {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-      }, 3000); // 3000ms = 3 seconds
-
-      return () => clearInterval(interval); // Cleanup on component unmount or when isPlaying changes
+      }, 3000);
+      return () => clearInterval(interval);
     }
-  }, [isPlaying, slides.length]); // Dependency on isPlaying
+  }, [isPlaying, slides.length]);
 
-  const togglePlayPause = () => {
-    setIsPlaying((prev) => !prev); // Toggle play/pause state
-  };
+  // Detect screen size to determine whether it's mobile
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Set mobile threshold
+    };
+
+    // Check initially and add listener
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
-    <div className="relative w-full h-[80vh] bg-black text-white flex flex-col items-center">
+    <div className="relative w-full h-[80vh] bg-[#243765] text-white flex flex-col items-center">
       {/* Container for the sliding images */}
       <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
         {/* Animated Image Section */}
         <motion.div
-          key={currentIndex} // This ensures the component re-renders for each new image
+          key={currentIndex}
           className="w-full h-full absolute"
-          initial={{ opacity: 0, x: 100 }} // Initial state: hidden and from the right
-          animate={{ opacity: 1, x: 0 }} // Final state: fully visible and centered
-          exit={{ opacity: 0, x: -100 }} // Exit state: fade out to the left
-          transition={{ duration: 1 }} // Transition time
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 1 }}
         >
           <Image
             src={slides[currentIndex].src}
@@ -55,46 +96,46 @@ const Hero = () => {
       </div>
 
       {/* Buttons for Image Names */}
-      <div className="absolute bottom-4 z-10 flex justify-center w-full gap-4">
+      <div className="absolute bottom-5 z-10 flex justify-center w-full gap-5">
         {slides.map((slide, index) => (
           <button
             key={index}
-            onClick={() => setCurrentIndex(index)} // Set the active index on button click
-            className={`text-sm md:text-base py-2 px-4 rounded-md transition duration-300  
-              ${
-                currentIndex === index
-                  ? "bg-green-500 text-white"
-                  : "bg-transparent border border-gray-300 text-white hover:bg-green-500 hover:text-white"
-              }`}
-          >
-            {slide.imageName}
-          </button>
+            onClick={() => setCurrentIndex(index)}
+            className={`w-20 h-[2px] transition-all duration-300 
+          ${
+            currentIndex === index
+              ? "bg-orange-500 scale-125"
+              : "bg-gray-300 hover:bg-orange-400"
+          }`}
+          ></button>
         ))}
       </div>
 
       {/* Text Section */}
       <div
-        className="absolute bottom-10 left-4 w-[90%] h-auto 
-          lg:top-1/2 md:left-0 md:w-1/3 md:h-1/3 
-          z-10 flex flex-col items-center justify-center p-4 md:p-6"
+        className="absolute bottom-10 left-4 w-[90%]  h-auto 
+      lg:top-1/2 lg:left-10  md:w-1/2 md:h-1/6 
+      z-10 flex flex-col  justify-center p-4 md:p-6"
       >
+        <h1 className="text-5xl font-bold mb-8">
+          Redefining the Efficiency and Sustainability of Data Center Cooling
+        </h1>
+        <p className="text-gray-200 text-xl  mb-10">
+          {isMobile
+            ? slides[currentIndex].text.mobile // Show mobile text
+            : slides[currentIndex].text.desktop}{" "}
+        </p>
         <a
+          className=""
           href={slides[currentIndex].link} // Dynamic link based on current image
-          className="bg-green-600 text-white text-sm md:text-base 
-            font-semibold px-4 py-2 md:px-6 md:py-3 
-            rounded-md shadow-md hover:bg-green-700 
-            transition duration-300"
         >
-          Learn More
+          <button className="learn-more">
+            <span className="circle" aria-hidden="true">
+              <span className="icon arrow"></span>
+            </span>
+            <span className="button-text">Learn More</span>
+          </button>
         </a>
-
-        {/* Play/Pause Button */}
-        {/* <button
-          onClick={togglePlayPause}
-          className="mt-4 bg-purple-600 text-white py-2 px-4 rounded-md transition duration-300 hover:bg-purple-700"
-        >
-          {isPlaying ? "Pause" : "Play"} Slide Show
-        </button> */}
       </div>
     </div>
   );

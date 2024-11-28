@@ -9,7 +9,7 @@ const Tech = () => {
       title: "AI and Machine Learning",
       hoverText:
         "Advanced technologies, such as artificial intelligence and machine learning have explosive potential, however they also introduce unprecedented obstacles for data centers.",
-      icon: "/tech/ai.webp",
+      icon: "https://www.grcooling.com/wp-content/uploads/grc-ai-hero-image-desktop-1920x610.png",
       alt: "AI and Machine Learning",
       link: "#",
     },
@@ -18,7 +18,7 @@ const Tech = () => {
       title: "Blockchain Computing",
       hoverText:
         "GRC’s data center liquid immersion cooling solutions designed for digital asset mining are innovative yet amazingly simple. ",
-      icon: "/tech/ai.webp",
+      icon: "https://www.grcooling.com/wp-content/uploads/hashraq-max-beauty-shot-1920x1080.png",
       alt: "Blockchain Computing",
       link: "#",
     },
@@ -27,7 +27,7 @@ const Tech = () => {
       title: "Enterprise / Cloud / Hyperscale",
       hoverText:
         "Green Revolution Cooling’s (GRC) modular, pre-engineered immersion cooling systems enable you to build and expand data center capacity within weeks, reducing forecasting challenges.",
-      icon: "/tech/ai.webp",
+      icon: "https://www.grcooling.com/wp-content/uploads/2022/12/101-iceraq-product.png",
       alt: "Enterprise / Cloud / Hyperscale",
       link: "#",
     },
@@ -36,7 +36,7 @@ const Tech = () => {
       title: "Edge",
       hoverText:
         "Cloud and IOT applications have opened exciting new frontiers. But inherent latencies often demand that companies put localized compute closer to where the data is needed.",
-      icon: "/tech/ai.webp",
+      icon: "https://www.grcooling.com/wp-content/uploads/edge-header-image-1920x611.png",
       alt: "Edge",
       link: "#",
     },
@@ -45,7 +45,7 @@ const Tech = () => {
       title: "High-Performance Computing",
       hoverText:
         "High-performance computing (HPC) drives transformational discoveries and crushes previously insurmountable challenges. ",
-      icon: "/tech/ai.webp",
+      icon: "https://www.grcooling.com/wp-content/uploads/grc-desktop-header-image-1920x611.png",
       alt: "High-Performance Computing",
       link: "#",
     },
@@ -82,7 +82,7 @@ const Tech = () => {
     <div className="py-10 max-w-7xl lg:w-full h-auto mx-5 justify-start lg:mx-auto flex flex-col">
       <div className="h-auto w-full justify-center py-2 flex flex-col">
         <div className="flex flex-col lg:w-1/2 justify-start">
-          <h1 className="text-4xl text-blue-900 font-bold py-4">
+          <h1 className="text-4xl text-[#243765] font-bold py-10">
             GRC Solutions
           </h1>
           {/* <p className="text-black text-sm py-4">
@@ -101,7 +101,7 @@ const Tech = () => {
                   <h3 className="absolute text-lg text-black group-hover:text-white  text-start transition-all duration-300 group-hover:-translate-y-6 group-hover:opacity-0">
                     {card.title}
                   </h3>
-                  <p className="absolute text-sm text-black group-hover:text-white font-medium  opacity-0 transition-all duration-300 translate-y-6 group-hover:translate-y-0 group-hover:opacity-100">
+                  <p className="absolute text-sm text-black group-hover:text-white  opacity-0 transition-all duration-300 translate-y-6 group-hover:translate-y-0 group-hover:opacity-100">
                     {card.hoverText}
                   </p>
                 </div>

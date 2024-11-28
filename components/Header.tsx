@@ -11,6 +11,111 @@ const Header = () => {
   const [dropdownIndex, setDropdownIndex] = useState<number | null>(null);
 
   const subNavLinks = {
+    "/company": [
+      {
+        name: "About GRC",
+        path: "/investors/reports",
+        dropdownLinks: [
+          { name: "Annual Report", path: "/investors/reports/annual" },
+          { name: "Quarterly Report", path: "/investors/reports/quarterly" },
+        ],
+      },
+      {
+        name: "Our Expert Team",
+        path: "/investors/financials",
+        dropdownLinks: [
+          {
+            name: "Balance Sheet",
+            path: "/investors/financials/balance-sheet",
+          },
+          {
+            name: "Income Statement",
+            path: "/investors/financials/income-statement",
+          },
+        ],
+      },
+      {
+        name: "Our Promise of Quality",
+        path: "/investors/financials",
+        dropdownLinks: [
+          {
+            name: "Balance Sheet",
+            path: "/investors/financials/balance-sheet",
+          },
+          {
+            name: "Income Statement",
+            path: "/investors/financials/income-statement",
+          },
+        ],
+      },
+      {
+        name: "Our Patents",
+        path: "/investors/financials",
+        dropdownLinks: [
+          {
+            name: "Balance Sheet",
+            path: "/investors/financials/balance-sheet",
+          },
+          {
+            name: "Income Statement",
+            path: "/investors/financials/income-statement",
+          },
+        ],
+      },
+      {
+        name: "Our Customers",
+        path: "/investors/financials",
+        dropdownLinks: [
+          {
+            name: "Balance Sheet",
+            path: "/investors/financials/balance-sheet",
+          },
+          {
+            name: "Income Statement",
+            path: "/investors/financials/income-statement",
+          },
+        ],
+      },
+      {
+        name: "Careers at GRC",
+        path: "/investors/financials",
+        dropdownLinks: [
+          {
+            name: "Balance Sheet",
+            path: "/investors/financials/balance-sheet",
+          },
+          {
+            name: "Income Statement",
+            path: "/investors/financials/income-statement",
+          },
+        ],
+      },
+    ],
+
+    "/partners": [
+      {
+        name: "ITE and Solutions Providers",
+        path: "/investors/reports",
+        dropdownLinks: [
+          { name: "Annual Report", path: "/investors/reports/annual" },
+          { name: "Quarterly Report", path: "/investors/reports/quarterly" },
+        ],
+      },
+      {
+        name: "GRC ElectroSafe® Fluid Partners",
+        path: "/investors/financials",
+        dropdownLinks: [
+          {
+            name: "Balance Sheet",
+            path: "/investors/financials/balance-sheet",
+          },
+          {
+            name: "Income Statement",
+            path: "/investors/financials/income-statement",
+          },
+        ],
+      },
+    ],
     "/investors": [
       {
         name: "Reports",
@@ -35,30 +140,30 @@ const Header = () => {
         ],
       },
     ],
-    "/partners": [
-      {
-        name: "Our Network",
-        path: "/partners/network",
-        dropdownLinks: [
-          { name: "Global Partners", path: "/partners/network/global" },
-          { name: "Local Partners", path: "/partners/network/local" },
-        ],
-      },
-      {
-        name: "Opportunities",
-        path: "/partners/opportunities",
-        dropdownLinks: [
-          { name: "Franchising", path: "/partners/opportunities/franchising" },
-          {
-            name: "Collaborations",
-            path: "/partners/opportunities/collaborations",
-          },
-        ],
-      },
+    "/impressionIt": [
+      // {
+      //   name: "Our Network",
+      //   path: "/partners/network",
+      //   dropdownLinks: [
+      //     { name: "Global Partners", path: "/partners/network/global" },
+      //     { name: "Local Partners", path: "/partners/network/local" },
+      //   ],
+      // },
+      // {
+      //   name: "Opportunities",
+      //   path: "/partners/opportunities",
+      //   dropdownLinks: [
+      //     { name: "Franchising", path: "/partners/opportunities/franchising" },
+      //     {
+      //       name: "Collaborations",
+      //       path: "/partners/opportunities/collaborations",
+      //     },
+      //   ],
+      // },
     ],
-    "/careers": [
+    "/products": [
       {
-        name: "Jobs",
+        name: "ICEraQ®",
         path: "/careers/jobs",
         dropdownLinks: [
           { name: "Engineering", path: "/careers/jobs/engineering" },
@@ -66,7 +171,81 @@ const Header = () => {
         ],
       },
       {
-        name: "Internships",
+        name: "ICEtank®",
+        path: "/careers/internships",
+        dropdownLinks: [
+          { name: "Summer Internship", path: "/careers/internships/summer" },
+          { name: "Winter Internship", path: "/careers/internships/winter" },
+        ],
+      },
+      {
+        name: "HashRaQ MAX®",
+        path: "/careers/internships",
+        dropdownLinks: [
+          { name: "Summer Internship", path: "/careers/internships/summer" },
+          { name: "Winter Internship", path: "/careers/internships/winter" },
+        ],
+      },
+      {
+        name: "HashTank®",
+        path: "/careers/internships",
+        dropdownLinks: [
+          { name: "Summer Internship", path: "/careers/internships/summer" },
+          { name: "Winter Internship", path: "/careers/internships/winter" },
+        ],
+      },
+      {
+        name: "ElectroSafe® Fluids",
+        path: "/careers/internships",
+        dropdownLinks: [
+          { name: "Summer Internship", path: "/careers/internships/summer" },
+          { name: "Winter Internship", path: "/careers/internships/winter" },
+        ],
+      },
+      {
+        name: "Systems Manager",
+        path: "/careers/internships",
+        dropdownLinks: [
+          { name: "Summer Internship", path: "/careers/internships/summer" },
+          { name: "Winter Internship", path: "/careers/internships/winter" },
+        ],
+      },
+    ],
+    "/solutions": [
+      {
+        name: "AI and Machine Learning",
+        path: "/careers/jobs",
+        dropdownLinks: [
+          { name: "Engineering", path: "/careers/jobs/engineering" },
+          { name: "Marketing", path: "/careers/jobs/marketing" },
+        ],
+      },
+      {
+        name: "Blockchain Computing",
+        path: "/careers/internships",
+        dropdownLinks: [
+          { name: "Summer Internship", path: "/careers/internships/summer" },
+          { name: "Winter Internship", path: "/careers/internships/winter" },
+        ],
+      },
+      {
+        name: "Enterprise / Cloud / Hyperscale",
+        path: "/careers/internships",
+        dropdownLinks: [
+          { name: "Summer Internship", path: "/careers/internships/summer" },
+          { name: "Winter Internship", path: "/careers/internships/winter" },
+        ],
+      },
+      {
+        name: "Edge",
+        path: "/careers/internships",
+        dropdownLinks: [
+          { name: "Summer Internship", path: "/careers/internships/summer" },
+          { name: "Winter Internship", path: "/careers/internships/winter" },
+        ],
+      },
+      {
+        name: "High-Performance Computing",
         path: "/careers/internships",
         dropdownLinks: [
           { name: "Summer Internship", path: "/careers/internships/summer" },
@@ -115,14 +294,14 @@ const Header = () => {
 
   const isActive = (linkPath: string) => pathname === linkPath;
 
-  const handleMenuClick = (index: number) => {
-    // Toggle the dropdown menu when a menu item is clicked
-    if (dropdownIndex === index) {
-      setDropdownIndex(null); // Close the dropdown if the same item is clicked again
-    } else {
-      setDropdownIndex(index); // Open the clicked dropdown
-    }
-  };
+  // const handleMenuClick = (index: number) => {
+  //   // Toggle the dropdown menu when a menu item is clicked
+  //   if (dropdownIndex === index) {
+  //     setDropdownIndex(null); // Close the dropdown if the same item is clicked again
+  //   } else {
+  //     setDropdownIndex(index); // Open the clicked dropdown
+  //   }
+  // };
 
   return (
     <div className="lg:w-full h-auto flex mx-5 lg:mx-auto justify-center w-full z-50 ">
@@ -133,73 +312,86 @@ const Header = () => {
           className="py-4 h-full bg-white flex items-center border-r-2"
         >
           <Image
-            src={"/logo.png"}
+            src={
+              "https://www.grcooling.com/wp-content/uploads/grc-full-color-15-years.png"
+            }
             width={1000}
             height={1000}
-            className="h-10 w-auto px-2"
+            className="h-auto w-[20vw] px-2"
             alt="logo"
           />
         </Link>
 
-        <div className="flex flex-col w-full bg-[#6224ea] text-white">
+        <div className="flex flex-col w-full bg-[#243865] text-white">
           {/* Main Navigation */}
           <div className="h-full hidden lg:flex flex-row justify-between w-full items-center">
-            <div className="flex justify-center space-x-3 w-auto">
+            <div className="flex justify-center space-x-1 w-auto">
               <Link
                 href="/"
-                className={`p-4 ${
-                  isActive("/") ? "bg-white text-black" : "hover:underline"
-                }`}
+                className={`p-4 ${isActive("/") ? "bg-white text-black" : ""}`}
               >
                 Home
               </Link>
               <Link
-                href="/careers"
+                href="/solutions"
                 className={`p-4 ${
-                  pathname.startsWith("/careers")
-                    ? "bg-white text-black"
-                    : "hover:underline"
+                  pathname.startsWith("/solutions") ? "bg-white text-black" : ""
                 }`}
               >
-                Careers
+                Solutions
               </Link>
               <Link
-                href="/investors"
+                href="/products"
                 className={`p-4 ${
-                  pathname.startsWith("/investors")
-                    ? "bg-white text-black"
-                    : "hover:underline"
+                  pathname.startsWith("/products") ? "bg-white text-black" : ""
                 }`}
               >
-                Investors
+                Products
+              </Link>
+              <Link
+                href="/impressionIt"
+                className={`p-4 ${
+                  pathname.startsWith("/impressionIt")
+                    ? "bg-white text-black"
+                    : ""
+                }`}
+              >
+                Immersion-Ready IT
               </Link>
               <Link
                 href="/partners"
                 className={`p-4 ${
-                  pathname.startsWith("/partners")
-                    ? "bg-white text-black"
-                    : "hover:underline"
+                  pathname.startsWith("/partners") ? "bg-white text-black" : ""
                 }`}
               >
                 Partners
               </Link>
+              <Link
+                href="/company"
+                className={`p-4 ${
+                  pathname.startsWith("/company") ? "bg-white text-black" : ""
+                }`}
+              >
+                Company
+              </Link>
             </div>
 
             <div className="flex justify-center space-x-3 w-auto">
-              <Link
+              {/* <Link
                 href="/contact"
                 className={`p-4 ${
-                  isActive("/contact")
-                    ? "bg-white text-black"
-                    : "hover:underline"
+                  isActive("/contact") ? "bg-white text-black" : ""
                 }`}
               >
+                Contact
+              </Link> */}
+              <Link href={"/contact"} className="p-4">
                 Contact
               </Link>
               <Link
                 href="/user"
                 className={`p-4 ${
-                  isActive("/user") ? "bg-white text-black" : "hover:underline"
+                  isActive("/user") ? "bg-white text-black" : ""
                 }`}
               >
                 <User />
@@ -227,13 +419,13 @@ const Header = () => {
                     <div
                       key={index}
                       className="relative"
-                      onClick={() => handleMenuClick(index)}
+                      // onClick={() => handleMenuClick(index)}
                     >
                       <button
-                        className={`p-4 ${
+                        className={`p-4  text-sm  ${
                           isActive(link.path)
-                            ? "bg-gray-200 text-black"
-                            : "hover:underline"
+                            ? "bg-gray-100 text-blue-500 no-underline"
+                            : "hover:no-underline"
                         }`}
                       >
                         {link.name}
@@ -255,7 +447,7 @@ const Header = () => {
                                 >
                                   <Link
                                     href={dropdown.path}
-                                    className="block px-4 py-2 w-auto hover:bg-gray-100 whitespace-nowrap"
+                                    className="block  px-4 py-2 w-auto hover:bg-gray-100 whitespace-nowrap"
                                   >
                                     {dropdown.name}
                                   </Link>
@@ -285,10 +477,10 @@ const Header = () => {
                     <div
                       key={index}
                       className="relative"
-                      onMouseEnter={() => handleMenuClick(index)} // For non-home pages, keep mouseEnter logic
+                      // onMouseEnter={() => handleMenuClick(index)} // For non-home pages, keep mouseEnter logic
                     >
                       <button
-                        className={`p-4 ${
+                        className={`p-4 text-sm ${
                           isActive(link.path)
                             ? "bg-gray-200 text-black"
                             : "hover:underline"

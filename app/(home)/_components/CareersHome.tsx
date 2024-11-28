@@ -114,15 +114,15 @@ const OverlayCopy = ({
 
 const ExampleContent = () => (
   <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
-    <h2 className="col-span-1 text-4xl font-bold md:col-span-4">
+    <h2 className="col-span-1 text-[#243765] text-4xl font-bold md:col-span-4">
       Join Our Team Today
     </h2>
     <div className="col-span-1 md:col-span-8">
-      <p className="mb-4 text-lg">
+      <p className="mb-4 text-xl">
         Discover exciting career opportunities at GRC and be part of a team
         that`s shaping the future of energy and automation.
       </p>
-      <p className="mb-8 text-lg">
+      <p className="mb-8 text-xl">
         With innovation at the heart of everything we do, we offer a culture of
         inclusivity and professional growth.
       </p>

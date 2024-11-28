@@ -4,6 +4,7 @@ import {
   ArrowLeftCircle,
   ArrowRight,
   ArrowRightCircle,
+  ArrowUpRight,
   Share,
 } from "lucide-react";
 import Link from "next/link";
@@ -114,7 +115,7 @@ const BlogHome = () => {
   return (
     <div className="h-auto flex mx-auto max-w-7xl w-full py-10 px-4">
       <div className="w-full flex flex-col">
-        <h1 className="font-bold text-4xl mb-6">Latest News</h1>
+        <h1 className="font-bold text-4xl text-[#243765] mb-6">Latest News</h1>
 
         {/* Carousel Section */}
         <div className="relative">
@@ -125,7 +126,7 @@ const BlogHome = () => {
                 .map((item) => (
                   <motion.div
                     key={item.id}
-                    className="bg-gray-200 rounded-lg overflow-hidden w-full lg:w-[28vw] flex-shrink-0 lg:h-[70vh] h-[60vh] flex flex-col"
+                    className="bg-gray-100 rounded-lg overflow-hidden w-full lg:w-[28vw] flex-shrink-0 lg:h-[70vh] h-[60vh] flex flex-col"
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
@@ -148,7 +149,7 @@ const BlogHome = () => {
                       </h2>
                       {item.link && (
                         <Link href={item.link} className="mt-auto">
-                          <Share className="text-black" />
+                          <ArrowUpRight className="inline" />
                         </Link>
                       )}
                     </div>

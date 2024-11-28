@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Trees, Code } from "lucide-react";
+import { ArrowLeft, ArrowRight, Trees, Code, ArrowUpRight } from "lucide-react";
 
 const cardData = [
   {
@@ -86,14 +86,14 @@ const DigitalPartner = () => {
   const visibleCards = isSmallScreen ? 1 : 3;
 
   return (
-    <div className="bg-white h-auto mx-auto w-full max-w-7xl py-10 flex flex-col">
+    <div className="h-auto mx-auto w-full max-w-7xl py-10 flex flex-col">
       {/* Header Section */}
       <div className="flex flex-col lg:flex-row lg:justify-between items-center w-full mb-6">
         <div className="flex flex-col text-center lg:text-start w-full justify-start mx-5 ">
-          <h1 className="text-4xl  font-semibold uppercase text-blue-900 mb-4 lg:mb-0">
+          <h1 className="text-4xl    text-[#243765] font-bold  lg:mb-0">
             Green Revolution Cooling
           </h1>
-          <p className="mt-2">
+          <p className="mt-2 text-xl">
             Redefining the Efficiency and Sustainability of Data Center Cooling
           </p>
         </div>
@@ -126,11 +126,13 @@ const DigitalPartner = () => {
                 className="bg-gray-100 rounded-lg shadow-lg p-6 h-[320px] flex flex-col justify-between"
               >
                 <div>{card.icon}</div>
-                <h2 className="text-xl font-semibold">{card.title}</h2>
+                <h2 className="text-xl text-[#69bf3c] font-semibold">
+                  {card.title}
+                </h2>
                 <p className="text-gray-600">{card.description}</p>
                 <a
                   href="#"
-                  className="text-black hover:text-green-500 font-medium"
+                  className="text-black hover:text-[#69bf3c] font-medium"
                 >
                   {card.link} →
                 </a>
@@ -158,13 +160,15 @@ const DigitalPartner = () => {
                   alt={card.title}
                   className="w-[7rem] h-auto"
                 />
-                <h2 className="text-xl font-semibold">{card.title}</h2>
+                <h2 className="text-xl text-[#69bf3c] font-semibold">
+                  {card.title}
+                </h2>
                 <p className="text-gray-600 text-sm ">{card.description}</p>
                 <a
                   href="#"
-                  className="text-black hover:text-green-500 font-medium"
+                  className="text-black hover:text-[#69bf3c] font-medium"
                 >
-                  {card.link} →
+                  {card.link} <ArrowUpRight className="inline" />
                 </a>
               </motion.div>
             ))}

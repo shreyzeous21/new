@@ -99,22 +99,17 @@ const Footer = () => {
 
   // Footer links array
   const footerLinks: FooterLink[] = [
-    { text: "Contact Us", href: "/contact" },
-    { text: "Disclaimer", href: "/disclaimer" },
-    { text: "Privacy Statement", href: "/privacy" },
+    { text: "Privacy Policy", href: "/" },
     { text: "Terms of Use", href: "/terms" },
-    { text: "Sitemap", href: "/sitemap" },
-    { text: "Raise a Grievance", href: "/grievance" },
+    { text: "Legal", href: "/" },
   ];
 
   const cap: CapabilitiesSection[] = [
     {
-      title: "Capabilities",
+      title: "Partners",
       links: [
-        { text: "AI", href: "/ai" },
-        { text: "AI & Generative AI", href: "/ai-gi" },
-        { text: "Cloud", href: "/" },
-        { text: "Software", href: "/" },
+        { text: "ITE & Solutions Provider Partners", href: "/" },
+        { text: "ElectroSafe Fluid Partner Program", href: "/" },
       ],
     },
   ];
@@ -137,51 +132,27 @@ const Footer = () => {
 
   const ind: IndSection[] = [
     {
-      title: "Industries",
+      title: "Solutions",
       links: [
-        { text: "Aerospace and Defense", href: "/" },
-        { text: "Automotive", href: "/" },
-        { text: "Captive Business Services", href: "/" },
-        { text: "Consumer Goods", href: "/" },
-        { text: "Energy and Utilities", href: "/" },
-        { text: "Life Sciences and Healthcare", href: "/" },
-        { text: "Manufacturing", href: "/" },
-        { text: "Mining and Natural Resources", href: "/" },
-        { text: "Oil and Gas", href: "/" },
-        { text: "Public Sector", href: "/" },
-        { text: "Retail", href: "/" },
-        { text: "Technology", href: "/" },
-        { text: "Telecom Media and Entertainment Services", href: "/" },
-        { text: "Travel, Transport, Logistics & Hospitality", href: "/" },
-        { text: "Financial Services", href: "/" },
-        { text: "Banking", href: "/" },
-        { text: "Capital Markets", href: "/" },
-        { text: "Financial Crime Compliance and Risk", href: "/" },
-        { text: "Fintech", href: "/" },
-        { text: "Insurance", href: "/" },
+        { text: "AI and Machine Learning", href: "/" },
+        { text: "Blockchain Computing", href: "/" },
+        { text: "Enterprise / Cloud / Hyperscale", href: "/" },
+        { text: "Edge", href: "/" },
+        { text: "High-Performance Computing", href: "/" },
       ],
     },
   ];
   const about: AboutSection[] = [
     {
-      title: "About Us",
+      title: "Products",
       links: [
-        { text: "About Us Overview", href: "/" },
-        { text: "Analyst Recognitions", href: "/" },
-        { text: "Annual Report 2024", href: "/" },
-        { text: "Awards and Recognition", href: "/" },
-        { text: "Code of Business Ethics and Conduct", href: "/" },
-        { text: "Corporate Social Responsibility", href: "/" },
-        { text: "Diversity, Equity and Inclusion", href: "/" },
-        { text: "Global Presence", href: "/" },
-        { text: "Investor Relations", href: "/" },
-        { text: "Leadership", href: "/" },
-        { text: "Newsroom", href: "/" },
-        { text: "Privacy Trust Center", href: "/" },
-        { text: "Strategic Alliances", href: "/" },
-        { text: "Supercharging Progress", href: "/" },
-        { text: "Sustainability", href: "/" },
-        { text: "Sustainability Report 2024", href: "/" },
+        { text: "ICEraQ®", href: "/" },
+        { text: "ICEtank®", href: "/" },
+        { text: "HashRaQ® MAX", href: "/" },
+        { text: "HashTank®", href: "/" },
+        { text: "ElectroSafe® Fluids", href: "/" },
+        { text: "Systems Manager", href: "/" },
+        { text: "Server Compatibility", href: "/" },
       ],
     },
   ];
@@ -189,34 +160,32 @@ const Footer = () => {
     {
       title: "Resources",
       links: [
-        { text: "Thread and insights", href: "/" },
-        { text: "Case Studies", href: "/" },
-        { text: "Event adn webinars", href: "/" },
+        { text: "Support", href: "/" },
+        { text: "Blog Library", href: "/" },
+        { text: "Learning Center", href: "/" },
+        { text: "Contact", href: "/" },
+        { text: "Customer Login", href: "/" },
       ],
     },
   ];
 
   const careers: CareerSection[] = [
     {
-      title: "Careers",
+      title: "News",
       href: "/",
-      subTitle: "Careers Overview",
+      subTitle: "News / Events",
       links: [
         {
-          region: "Americas",
+          region: "Events",
           href: "/americas",
         },
         {
-          region: "Asia Pacific",
+          region: "Press",
           href: "/asia-pacific",
         },
         {
-          region: "Europe",
+          region: "newsletter",
           href: "/europe",
-        },
-        {
-          region: "India",
-          href: "/india",
         },
       ],
     },
@@ -224,19 +193,19 @@ const Footer = () => {
 
   const globalPresence: GlobalSection[] = [
     {
-      title: "Global",
+      title: "Company",
       links: [
         {
-          region: "Americas",
-          href: "/global-presence/americas",
+          region: "About GRC",
+          href: "/",
         },
         {
-          region: "EMEA",
-          href: "/global-presence/emea",
+          region: "Our Team",
+          href: "/",
         },
         {
-          region: "APAC",
-          href: "/global-presence/apac",
+          region: "Our Promise of Quality",
+          href: "/",
         },
       ],
     },
@@ -251,12 +220,12 @@ const Footer = () => {
         </Link>
 
         {/* 2 - Capabilities Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           {/* col 1 */}
-          <div className="font-semibold text-xl">
+          <div className="">
             {cap.map((cap, index) => (
               <div key={index} className="mb-4">
-                <h1 className="mb-2">{cap.title}</h1>
+                <h1 className="mb-2 font-semibold text-xl">{cap.title}</h1>
                 <ul>
                   {cap.links.map((link, linkIndex) => (
                     <Link key={linkIndex} href={link.href}>
@@ -266,10 +235,11 @@ const Footer = () => {
                 </ul>
               </div>
             ))}
+            <div className=""></div>
           </div>
 
           {/* col 2 */}
-          <div className="text-sm ">
+          {/* <div className="text-sm ">
             {emp.map((emp, index) => (
               <div key={index} className="mb-4 ">
                 <h1 className="mb-2 text-xl text-[#0b0a23]">{emp.title}</h1>
@@ -282,7 +252,7 @@ const Footer = () => {
                 </ul>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* col 3 */}
           <div className="text-sm ">
@@ -303,7 +273,7 @@ const Footer = () => {
           {/* col 4 */}
           <div className="text-sm ">
             <Link href={"/eco"} className="font-bold text-xl">
-              Ecosystem
+              Customers
             </Link>
             {about.map((about, index) => (
               <div key={index} className="mb-4 ">
@@ -369,6 +339,15 @@ const Footer = () => {
           </div>
         </div>
         {/* 2 - Capabilities Grid */}
+        <div className="py-5 text-sm gap-4 flex justify-center flex-col">
+          <p className="">
+            Green Revolution Cooling, Inc. (“GRC”) believes this information to
+            be accurate; however, GRC does not make any representation or
+            warranty, express or implied, as to the accuracy or completeness of
+            any such information and shall have no liability for the
+            consequences of the use of such information.
+          </p>
+        </div>
 
         <hr className="border-t border-gray-300 my-4" />
 
@@ -387,8 +366,6 @@ const Footer = () => {
         {/* 4 - Footer Links */}
         <div className="flex flex-col text-gray-400 text-sm py-4 justify-center max-w-5xl mx-auto w-full">
           <div className="flex lg:flex-row flex-col items-center justify-center lg:gap-10 gap-4">
-            <span>Copyright © 2024 CXP Technologies</span>
-
             <div className="flex flex-wrap justify-center gap-2">
               {footerLinks.map((link, index) => (
                 <span key={index}>
@@ -402,10 +379,15 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          <div className="flex justify-center text-center py-4">
+          <div className="flex justify-center flex-col gap-2 text-center py-4">
             <p>
               We use cookies on our site. Please read more about cookies policy
               here.
+            </p>
+            <p>
+              ©2024 GRC, Green Revolution Cooling, and The Immersion Cooling
+              Authority are each registered trademarks of Green Revolution
+              Cooling, Inc.
             </p>
           </div>
         </div>
