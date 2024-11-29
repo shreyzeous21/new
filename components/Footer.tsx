@@ -1,14 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import {
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Youtube,
-  Share2,
-} from "lucide-react";
+import { Facebook, Twitter, Linkedin } from "lucide-react";
 
 // Define interfaces for the links and sections
 interface SocialLink {
@@ -265,7 +258,7 @@ const Footer = () => {
 
           {/* col 5 */}
           <div className="text-sm ">
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-2">
               <div>
                 {careers.map((careers, index) => (
                   <div key={index} className="mb-4 ">
@@ -280,6 +273,7 @@ const Footer = () => {
                     </ul>
                   </div>
                 ))}
+                <hr className="border border-blue-900" />
               </div>
               <div className="">
                 {globalPresence.map((globalPresence, index) => (
@@ -296,6 +290,7 @@ const Footer = () => {
                     </ul>
                   </div>
                 ))}
+                <hr className="border border-blue-900 " />
               </div>
             </div>
           </div>
@@ -326,12 +321,12 @@ const Footer = () => {
         </div>
 
         {/* 4 - Footer Links */}
-        <div className="flex flex-col text-gray-400 text-sm py-4 justify-center max-w-5xl mx-auto w-full">
+        <div className="flex flex-col  text-sm py-4 justify-center max-w-5xl mx-auto w-full">
           <div className="flex lg:flex-row flex-col items-center justify-center lg:gap-10 gap-4">
             <div className="flex flex-wrap justify-center gap-2">
               {footerLinks.map((link, index) => (
                 <span key={index}>
-                  <a href={link.href} className="hover:text-blue-300">
+                  <a href={link.href} className="hover:text-[#6cbd45]">
                     {link.text}
                   </a>
                   {index < footerLinks.length - 1 && (
