@@ -3,7 +3,7 @@ import React from "react";
 
 const FooterUpper = () => {
   return (
-    <div className="w-full h-[40vh] mx-auto justify-center bg-gradient-to-tr from-green-500  to-blue-900 flex">
+    <div className="w-full h-[40vh]  flex-col mx-auto justify-center bg-gradient-to-tr from-green-500  to-blue-900 flex">
       <div className="flex lg:flex-row flex-col max-w-7xl lg:mx-auto mx-5  h-full justify-center lg:justify-between items-center gap-3  lg:w-full">
         <div className=" flex flex-col gap-2">
           <h1 className="text-4xl text-white font-bold">
@@ -21,6 +21,7 @@ const FooterUpper = () => {
           </button>
         </div>
       </div>
+      <hr className="bg-[#73c000] py-3 border-none" />
     </div>
   );
 };

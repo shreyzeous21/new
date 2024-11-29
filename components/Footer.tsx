@@ -170,22 +170,45 @@ const Footer = () => {
     <footer className="h-auto text-black justify-center lg:mx-auto flex flex-col bg-gray-100">
       <div className="flex flex-col lg:mx-auto max-w-7xl mx-4 lg:w-full">
         {/* 1 - Home Link */}
-        <Link href={"/"} className="font-semibold text-sm py-5">
-          Home
-        </Link>
-
+        <hr className="font-semibold text-sm py-5" />
         {/* 2 - Capabilities Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           {/* col 1 */}
+
           <div className="">
-            <div className="bg-black h-1/2"></div>
-            {cap.map((cap, index) => (
-              <div key={index} className="mb-4">
-                <h1 className="mb-2 font-semibold text-xl">{cap.title}</h1>
+            <div className="flex flex-col w-full">
+              <img
+                src="https://www.grcooling.com/wp-content/uploads/2022/01/grc-full-color-resized-243x90.png"
+                alt=""
+                className="w-[15vw] h-auto"
+              />
+              <div className="py-2 w-full flex mx-4 flex-col">
+                <h1 className="text-xl font-semibold">
+                  Green Revolution Cooling, Inc.
+                </h1>
+                <p className="w-1/2">
+                  11525 Stonehollow Dr. Ste. A-150 Austin, TX 78758 United
+                  States
+                </p>
+                <span>tel: +1.512.692.8003</span>
+                <span>ContactUs@grcooling.com</span>
+              </div>
+              <img
+                src="https://www.grcooling.com/wp-content/uploads/ios-9001-2015-badge-blue-175x82.jpg"
+                alt=""
+                className="w-[15vw] h-auto"
+              />
+            </div>
+
+            {about.map((about, index) => (
+              <div key={index} className="mb-4 ">
+                <h1 className="mb-2 text-lg font-semibold">{about.title}</h1>
                 <ul>
-                  {cap.links.map((link, linkIndex) => (
+                  {about.links.map((link, linkIndex) => (
                     <Link key={linkIndex} href={link.href}>
-                      <li className="py-1 hover:text-[#6cbd45]">{link.text}</li>
+                      <li className="text-sm hover:text-[#6cbd45]">
+                        {link.text}
+                      </li>
                     </Link>
                   ))}
                 </ul>
@@ -227,29 +250,35 @@ const Footer = () => {
 
           {/* col 4 */}
           <div className="text-sm ">
-            <Link href={"/eco"} className="font-bold text-xl">
+            <Link href={"/"} className="font-bold text-xl">
               Customers
             </Link>
-            {about.map((about, index) => (
-              <div key={index} className="mb-4 ">
-                <h1 className="mb-2 text-xl font-bold">{about.title}</h1>
+            <hr className="border border-blue-900 my-2 " />
+            {/* partners */}
+            {cap.map((cap, index) => (
+              <div key={index} className="mb-4">
+                <h1 className="mb-2 font-semibold text-lg">{cap.title}</h1>
                 <ul>
-                  {about.links.map((link, linkIndex) => (
+                  {cap.links.map((link, linkIndex) => (
                     <Link key={linkIndex} href={link.href}>
-                      <li className="hover:text-[#6cbd45]">{link.text}</li>
+                      <li className="gap-2 hover:text-[#6cbd45]">
+                        {link.text}
+                      </li>
                     </Link>
                   ))}
                 </ul>
               </div>
             ))}
-            <hr className="border border-blue-900  " />
+            <hr className="border border-blue-900 " />
             {res.map((res, index) => (
-              <div key={index} className="my-4 ">
-                <h1 className="mb-2 text-xl font-bold">{res.title}</h1>
+              <div key={index} className="my-3">
+                <h1 className="mb-2 text-lg font-bold">{res.title}</h1>
                 <ul>
                   {res.links.map((link, linkIndex) => (
                     <Link key={linkIndex} href={link.href}>
-                      <li className="hover:text-[#6cbd45]">{link.text}</li>
+                      <li className="hover:text-[#6cbd45] gap-2">
+                        {link.text}
+                      </li>
                     </Link>
                   ))}
                 </ul>
@@ -263,12 +292,14 @@ const Footer = () => {
               <div>
                 {careers.map((careers, index) => (
                   <div key={index} className="mb-4 ">
-                    <h1 className="mb-2 text-xl font-bold">{careers.title}</h1>
-                    <h2 className="font-semibold mb-2">{careers.subTitle}</h2>
+                    {/* <h1 className="mb-2 text-xl font-bold">{careers.title}</h1> */}
+                    <h2 className="mb-2 text-lg font-semibold">
+                      {careers.subTitle}
+                    </h2>
                     <ul>
                       {careers.links.map((link, linkIndex) => (
                         <Link key={linkIndex} href={link.href}>
-                          <li className="hover:text-[#6cbd45]">
+                          <li className="hover:text-[#6cbd45] gap-2">
                             {link.region}
                           </li>
                         </Link>
@@ -281,13 +312,13 @@ const Footer = () => {
               <div className="">
                 {globalPresence.map((globalPresence, index) => (
                   <div key={index} className="mb-4">
-                    <h1 className="mb-2 font-bold text-xl">
+                    <h1 className="mb-2 font-semibold text-lg">
                       {globalPresence.title}
                     </h1>
                     <ul>
                       {globalPresence.links.map((link, linkIndex) => (
                         <Link key={linkIndex} href={link.href}>
-                          <li className="py-1 hover:text-[#6cbd45]">
+                          <li className="gap-2 hover:text-[#6cbd45]">
                             {link.region}
                           </li>
                         </Link>
@@ -295,14 +326,14 @@ const Footer = () => {
                     </ul>
                   </div>
                 ))}
-                <hr className="border border-blue-900 " />
+                {/* <hr className="border border-blue-900 " /> */}
               </div>
             </div>
           </div>
         </div>
         {/* 2 - Capabilities Grid */}
-        <div className="py-5 text-sm gap-4 flex justify-center flex-col">
-          <p className="">
+        <div className="mt-10 text-sm flex justify-center flex-col">
+          <p className="text-gray-500">
             Green Revolution Cooling, Inc. (“GRC”) believes this information to
             be accurate; however, GRC does not make any representation or
             warranty, express or implied, as to the accuracy or completeness of
