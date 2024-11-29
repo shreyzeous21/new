@@ -2,7 +2,6 @@
 
 import {
   ArrowLeftCircle,
-  ArrowRight,
   ArrowRightCircle,
   ArrowUpRight,
 } from "lucide-react";
