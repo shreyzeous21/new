@@ -73,24 +73,6 @@ const Footer = () => {
       color: "text-blue-700",
       hoverColor: "hover:text-blue-700",
     },
-    {
-      name: "Instagram",
-      icon: <Instagram />,
-      color: "text-pink-500",
-      hoverColor: "hover:text-pink-500",
-    },
-    {
-      name: "Youtube",
-      icon: <Youtube />,
-      color: "text-red-600",
-      hoverColor: "hover:text-red-600",
-    },
-    {
-      name: "Threads",
-      icon: <Share2 />,
-      color: "text-[#2A65C1]",
-      hoverColor: "hover:text-[#2A65C1]",
-    },
   ];
 
   // Footer links array
