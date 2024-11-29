@@ -255,7 +255,7 @@ const Header = () => {
     ],
     "/": [
       {
-        name: "Driving",
+        name: "Compute Cooler",
         path: "/driving/jobs",
         dropdownLinks: [
           {
@@ -269,7 +269,7 @@ const Header = () => {
         ],
       },
       {
-        name: "Sbl",
+        name: "Run Smarter",
         path: "/driving/jobs",
         dropdownLinks: [
           {
@@ -282,7 +282,7 @@ const Header = () => {
           { name: "Markewdding", path: "/careers/jobs/marketing" },
         ],
       },
-      { name: "Products", path: "/products" },
+      { name: "Grow Faster", path: "/products" },
     ],
   };
 
@@ -328,7 +328,7 @@ const Header = () => {
             <div className="flex justify-center  w-auto">
               <Link
                 href="/"
-                className={`p-4 border-r ${
+                className={`p-4 border-r border-[#687caf] ${
                   isActive("/") ? "bg-white text-black" : ""
                 }`}
               >
@@ -336,7 +336,7 @@ const Header = () => {
               </Link>
               <Link
                 href="/solutions"
-                className={`p-4 border-r ${
+                className={`p-4 border-r border-[#687caf] ${
                   pathname.startsWith("/solutions") ? "bg-white text-black" : ""
                 }`}
               >
@@ -344,7 +344,7 @@ const Header = () => {
               </Link>
               <Link
                 href="/products"
-                className={`p-4 border-r ${
+                className={`p-4 border-r border-[#687caf] ${
                   pathname.startsWith("/products") ? "bg-white text-black" : ""
                 }`}
               >
@@ -352,7 +352,7 @@ const Header = () => {
               </Link>
               <Link
                 href="/impressionIt"
-                className={`p-4 border-r ${
+                className={`p-4 border-r border-[#687caf] ${
                   pathname.startsWith("/impressionIt")
                     ? "bg-white text-black"
                     : ""
@@ -362,7 +362,7 @@ const Header = () => {
               </Link>
               <Link
                 href="/partners"
-                className={`p-4 border-r ${
+                className={`p-4 border-r border-[#687caf] ${
                   pathname.startsWith("/partners") ? "bg-white text-black" : ""
                 }`}
               >
@@ -370,7 +370,7 @@ const Header = () => {
               </Link>
               <Link
                 href="/company"
-                className={`p-4 border-r ${
+                className={`p-4 border-r border-[#687caf] ${
                   pathname.startsWith("/company") ? "bg-white text-black" : ""
                 }`}
               >
