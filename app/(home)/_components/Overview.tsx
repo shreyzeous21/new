@@ -3,10 +3,10 @@ import React from "react";
 
 const Overview = () => {
   return (
-    <div className="bg-white h-auto mx-auto w-full max-w-7xl py-10 flex flex-col">
-      <div className="flex flex-row justify-center items-center w-full mx-auto  gap-4 ">
+    <div className="bg-white h-auto lg:mx-auto lg:w-full mx-4 max-w-7xl py-10 flex flex-col">
+      <div className="flex lg:flex-row flex-col justify-center items-center w-full mx-auto  gap-4 ">
         <div
-          className="w-1/2 text-left flex flex-col h-full  gap-8
+          className="lg:w-1/2 w-full text-left flex flex-col h-full  gap-8
         "
         >
           <h2 className="text-4xl text-[#243765] font-semibold">
@@ -20,8 +20,8 @@ const Overview = () => {
             patented technology that increases performance, enhances
             sustainability, and optimizes TCO.
           </p>
-          <button className="flex ">
-            Learn More <ArrowUpRight className="inline" />
+          <button className="flex hover:text-[#69bf3c] ">
+            Learn more <ArrowUpRight className="inline" />
           </button>
         </div>
         <div className="w-1/2 bg-black">

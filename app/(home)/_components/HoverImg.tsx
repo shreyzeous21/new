@@ -62,7 +62,7 @@ const HoverImg = () => {
             {/* Hover Content */}
             <div className="absolute inset-x-0 bottom-0 h-full bg-green-500/100 translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0 p-6 flex flex-col justify-end z-20">
               <div className="text-white space-y-2">
-                <h3 className="text-2xl font-semibold">{image.head}</h3>
+                <h3 className="text-2xl font-medium">{image.head}</h3>
                 <p className="text-sm opacity-100">{image.text}</p>
                 <a
                   href={image.link}

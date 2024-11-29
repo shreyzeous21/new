@@ -7,6 +7,7 @@ import AboutHome from "./_components/AboutHome";
 import CareersHome from "./_components/CareersHome";
 import BlogHome from "./_components/BlogHome";
 import Overview from "./_components/Overview";
+import Testi from "./_components/Testi";
 
 const Home = () => {
   return (
@@ -15,13 +16,16 @@ const Home = () => {
       <div className="">
         <Overview />
       </div>
-      <div className="bg-gray-200">
+      <div className="bg-[#243765]">
         <DigitalPartner />
       </div>
       <Tech />
       <HoverImg />
       <AboutHome />
       <CareersHome />
+      <div className="bg-gray-100">
+        <Testi />
+      </div>
       <BlogHome />
     </div>
   );

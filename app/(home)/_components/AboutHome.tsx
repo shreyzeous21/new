@@ -21,15 +21,15 @@ const AboutHome = () => {
       <h2 className="text-4xl font-bold text-[#243765]  mb-6">About GRC</h2>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 ">
         {cards.map((card, index) => (
           <a
             key={index}
             href={card.link}
-            className="border border-gray-300 bg-white shadow-sm p-4 flex items-center justify-between hover:shadow-md transition-shadow duration-300"
+            className="border hover:text-[#69bf3c] border-gray-300 bg-white shadow-sm p-4 flex items-center justify-between hover:shadow-md transition-shadow duration-300"
           >
             {/* Card Title */}
-            <h3 className="text-sm font-medium text-gray-900">{card.title}</h3>
+            <h3 className="text-sm font-medium ">{card.title}</h3>
 
             {/* Arrow Icon */}
             <span className="text-gray-500 text-xl font-bold">&rarr;</span>

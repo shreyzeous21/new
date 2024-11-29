@@ -90,10 +90,10 @@ const DigitalPartner = () => {
       {/* Header Section */}
       <div className="flex flex-col lg:flex-row lg:justify-between items-center w-full mb-6">
         <div className="flex flex-col text-center lg:text-start w-full justify-start mx-5 ">
-          <h1 className="text-4xl    text-[#243765] font-bold  lg:mb-0">
+          <h1 className="text-4xl  text-white font-bold  lg:mb-0">
             Green Revolution Cooling
           </h1>
-          <p className="mt-2 text-xl">
+          <p className="mt-2 text-white text-xl">
             Redefining the Efficiency and Sustainability of Data Center Cooling
           </p>
         </div>

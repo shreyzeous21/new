@@ -304,7 +304,7 @@ const Header = () => {
   // };
 
   return (
-    <div className="lg:w-full h-auto flex mx-5 lg:mx-auto justify-center w-full z-50 ">
+    <div className="lg:w-full h-auto flex mx-5 lg:mx-auto justify-center z-50 ">
       <div className="flex flex-row justify-start w-full">
         {/* Logo Section */}
         <Link
@@ -317,7 +317,7 @@ const Header = () => {
             }
             width={1000}
             height={1000}
-            className="h-auto w-[20vw] px-2"
+            className="h-auto lg:w-[20vw] w-[20vw] lg:px-2"
             alt="logo"
           />
         </Link>
@@ -483,9 +483,7 @@ const Header = () => {
                     >
                       <button
                         className={`p-4 text-sm ${
-                          isActive(link.path)
-                            ? "bg-gray-200 text-black"
-                            : "hover:underline"
+                          isActive(link.path) ? "bg-gray-200 text-black" : ""
                         }`}
                       >
                         {link.name}
