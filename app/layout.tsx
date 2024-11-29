@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
+import FooterUpper from "@/components/FooterUpper";
 
 const font = Raleway({ weight: "500", subsets: ["cyrillic"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
         <Header />
         <Breadcrumb />
         {children}
+        <FooterUpper />
         <Footer />
       </body>
     </html>

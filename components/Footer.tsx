@@ -192,7 +192,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="h-auto text-white justify-center lg:mx-auto flex flex-col bg-[#0b0a23]">
+    <footer className="h-auto text-black justify-center lg:mx-auto flex flex-col bg-gray-100">
       <div className="flex flex-col lg:mx-auto max-w-7xl mx-4 lg:w-full">
         {/* 1 - Home Link */}
         <Link href={"/"} className="font-semibold text-sm py-5">
@@ -329,14 +329,14 @@ const Footer = () => {
           </p>
         </div>
 
-        <hr className="border-t border-gray-300 my-4" />
+        <hr className="border-t border-blue-900 my-4" />
 
         {/* 3 - Social Links */}
         <div className="flex flex-row justify-center py-3 gap-4 flex-wrap">
           {socialLinks.map((link) => (
             <span
               key={link.name}
-              className={`text-xl rounded-full border-2 p-2 cursor-pointer ${link.hoverColor}`}
+              className={`text-xl rounded-full border-2 p-2 hover:bg-blue-900 cursor-pointer hover:text-white`}
             >
               {link.icon}
             </span>
