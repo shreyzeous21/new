@@ -242,8 +242,9 @@ const Footer = () => {
                 </ul>
               </div>
             ))}
+            <hr className="border border-blue-900  " />
             {res.map((res, index) => (
-              <div key={index} className="mb-4 ">
+              <div key={index} className="my-4 ">
                 <h1 className="mb-2 text-xl font-bold">{res.title}</h1>
                 <ul>
                   {res.links.map((link, linkIndex) => (
