@@ -125,7 +125,11 @@ const DigitalPartner = () => {
                 whileHover={{ scale: 1.05, y: -10 }}
                 className="bg-gray-100 rounded-lg shadow-lg p-6 h-[320px] flex flex-col justify-between"
               >
-                <div>{card.icon}</div>
+                <img
+                  src={card.icon}
+                  alt={card.title}
+                  className="h-auto w-[20vw]"
+                />
                 <h2 className="text-xl text-[#69bf3c] font-semibold">
                   {card.title}
                 </h2>
@@ -134,7 +138,8 @@ const DigitalPartner = () => {
                   href="#"
                   className="text-black hover:text-[#69bf3c] font-medium"
                 >
-                  {card.link} →
+                  {card.link}
+                  <ArrowUpRight className="inline" />
                 </a>
               </motion.div>
             ))}

@@ -18,6 +18,7 @@ const newsItems = [
     date: "November 05, 2024",
     imageUrl: "/blog/blog1.jpg",
     link: "/shrey",
+    text: "Comparing Apples to Apples: Fairly Assessing Single-Phase Immersion's Cooling Capabilities Versus Air and DLC",
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ const newsItems = [
     date: "October 21, 2024",
     imageUrl: "/blog/blog2.jpg",
     link: "/shrey",
+    text: "In today's rapidly evolving technological landscape, data centers are facing increasing demands for performance, efficiency, and sustainability.",
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const newsItems = [
     date: "October 4, 2024",
     imageUrl: "/blog/blog3.webp",
     link: "/shrey",
+    text: "As data centers continue to grow in size and complexity, the need for efficient and effective cooling solutions has become increasingly critical. Two primary methods have emerged to address...",
   },
   {
     id: 4,
@@ -41,13 +44,17 @@ const newsItems = [
     date: "September 20, 2024",
     imageUrl: "/blog/blog4.jpg",
     link: "/shrey",
+    text: "Thermal Design Power (TDP) has long been a data center thermal management cornerstone. However, in recent years, its limitations have become increasingly apparent. As chip power densities continue to...",
   },
   {
     id: 5,
-    title: "Cutting-Edge Cooling Techniques for Modern Data Centers",
-    date: "November 12, 2024",
-    imageUrl: "/img1.png",
+    title:
+      "Targeted Flow Heat Sinks: A Simplified Approach to Cooling High-Powered Processors",
+    date: "September 17, 2024",
+    imageUrl:
+      "https://www.grcooling.com/wp-content/uploads/tfhs-blog-image_-1-1.jpg",
     link: "/shrey",
+    text: "In today’s data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
   },
   {
     id: 6,
@@ -125,7 +132,7 @@ const BlogHome = () => {
                 .map((item) => (
                   <motion.div
                     key={item.id}
-                    className="bg-gray-100 rounded-lg overflow-hidden w-full lg:w-[28vw] flex-shrink-0 lg:h-[70vh] h-[60vh] flex flex-col"
+                    className="bg-gray-100 rounded-lg overflow-hidden w-full lg:w-[28vw] flex-shrink-0 lg:h-[90vh] h-[60vh] flex flex-col"
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
@@ -146,8 +153,13 @@ const BlogHome = () => {
                       <h2 className="text-lg font-semibold text-black leading-tight">
                         {item.title}
                       </h2>
+                      <p className="text-sm text-black py-2 ">{item.text}</p>
                       {item.link && (
-                        <Link href={item.link} className="mt-auto">
+                        <Link
+                          href={item.link}
+                          className="mt-auto flex hover:text-[#69bf3c]"
+                        >
+                          Learn more
                           <ArrowUpRight className="inline" />
                         </Link>
                       )}

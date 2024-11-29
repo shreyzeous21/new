@@ -24,7 +24,7 @@ const Overview = () => {
             Learn more <ArrowUpRight className="inline" />
           </button>
         </div>
-        <div className="w-1/2 bg-black">
+        <div className="lg:w-1/2 bg-black">
           <img
             src="https://www.grcooling.com/wp-content/uploads/shutterstock-2256246595_9d906fb88d6058c9b3b71d9f5decafd7_2000.jpg"
             alt=""

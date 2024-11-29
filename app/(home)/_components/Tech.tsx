@@ -54,7 +54,7 @@ const Tech = () => {
       title: "ICEraQ®",
       hoverText:
         "Whether you’re running AI, public cloud computing, private cloud storage, a high frequency trading operation, or an on-premises data center, ",
-      icon: "/tech/ai.webp",
+      icon: "https://www.grcooling.com/wp-content/uploads/grc-iceraq-model-images.png",
       alt: "ICEraQ®",
       link: "#",
     },
@@ -63,7 +63,7 @@ const Tech = () => {
       title: "ICEtank®",
       hoverText:
         "Need to add computing power in the middle of nowhere? Want to expand your data center but only have a parking lot to do so?",
-      icon: "/tech/ai.webp",
+      icon: "https://www.grcooling.com/wp-content/uploads/2019/06/photos-under-icetank-video-artwork.png",
       alt: "ICEtank®",
       link: "#",
     },
@@ -72,7 +72,7 @@ const Tech = () => {
       title: "HashRaQ® MAX",
       hoverText:
         "The increase in hashrates, compute densities, and heat loads continue to climb.",
-      icon: "/tech/ai.webp",
+      icon: "https://www.grcooling.com/wp-content/uploads/grc-hashraq-max.png",
       alt: "HashRaQ® MAX",
       link: "#",
     },
