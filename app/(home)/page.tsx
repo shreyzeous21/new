@@ -7,7 +7,7 @@ import AboutHome from "./_components/AboutHome";
 import CareersHome from "./_components/CareersHome";
 import BlogHome from "./_components/BlogHome";
 import Overview from "./_components/Overview";
-import Testi from "./_components/Testi";
+import Testimonial from "./_components/Testimonial";
 
 const Home = () => {
   return (
@@ -24,7 +24,7 @@ const Home = () => {
       <AboutHome />
       <CareersHome />
       <div className="bg-gray-100">
-        <Testi />
+        <Testimonial />
       </div>
       <BlogHome />
     </div>
