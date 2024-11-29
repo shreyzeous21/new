@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import {  ArrowUpRight } from "lucide-react";
 
 const HoverImg = () => {
   return (
