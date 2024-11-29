@@ -113,7 +113,7 @@ const OverlayCopy = ({
 };
 
 const ExampleContent = () => (
-  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
+  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 py-4 md:grid-cols-12">
     <h2 className="col-span-1 text-[#243765] text-4xl font-bold md:col-span-4">
       Join Our Team Today
     </h2>
@@ -126,8 +126,8 @@ const ExampleContent = () => (
         With innovation at the heart of everything we do, we offer a culture of
         inclusivity and professional growth.
       </p>
-      <button className="w-full rounded bg-orange-500 px-4 py-4 text-xl text-white transition-colors hover:bg-green-500 md:w-fit">
-        Explore Careers <ArrowUpRight className="inline" />
+      <button className="hover:text-[#69bf3c] ">
+        Learn more <ArrowUpRight className="inline" />
       </button>
     </div>
   </div>

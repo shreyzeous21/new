@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import React from "react";
 
 const FooterUpper = () => {
@@ -13,9 +14,10 @@ const FooterUpper = () => {
             Data Center
           </p>
         </div>
-        <div className="uppercase text-xl flex justify-center">
-          <button className="bg-blue-900 hover:bg-[#243865] text-white font-bold py-2 px-4 rounded">
+        <div className="uppercase text-xl bg-[#d4af35] items-center flex  justify-center">
+          <button className=" hover:bg-[#e4c96f] flex  font-bold py-2 px-4 rounded">
             Request a Consultation
+            <ArrowUpRight />
           </button>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import React from "react";
 
 const AboutHome = () => {
@@ -16,9 +17,14 @@ const AboutHome = () => {
   ];
 
   return (
-    <div className="py-4 lg:w-full h-auto flex flex-col max-w-7xl lg:mx-auto mx-4 justify-center">
+    <div className="py-10 lg:w-full h-auto flex flex-col max-w-7xl lg:mx-auto mx-4 justify-center">
       {/* Section Title */}
-      <h2 className="text-4xl font-bold text-[#243765]  mb-6">About GRC</h2>
+      <div className="mb-6">
+        <h2 className="text-4xl font-bold text-[#243765] ">About GRC</h2>
+        <p className="text-base  text-[#243765]">
+          The Immersion Cooling Authority
+        </p>
+      </div>
 
       {/* Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 ">
@@ -32,7 +38,7 @@ const AboutHome = () => {
             <h3 className="text-sm font-medium ">{card.title}</h3>
 
             {/* Arrow Icon */}
-            <span className="text-gray-500 text-xl font-bold">&rarr;</span>
+            <ArrowUpRight className="inline" />
           </a>
         ))}
       </div>

@@ -3,8 +3,8 @@ import React from "react";
 
 const Testimonial = () => {
   return (
-    <div className="bg-gradient-to-r from-[#e3f2fd] to-[#bbdefb] py-10 mx-auto h-auto items-center gap-4 justify-center w-full flex flex-col">
-      <h2 className="text-4xl font-bold text-[#333333]">Testimonials</h2>
+    <div className="bg-gradient-to-r from-green-500 to-blue-900 py-12 mx-auto h-auto items-center gap-4 justify-center w-full flex flex-col">
+      <h2 className="text-4xl font-bold text-white ">Testimonials</h2>
       <div className="bg-white w-1/2 rounded-md shadow-md flex flex-col gap-8 p-10 justify-center h-[60vh]">
         <Quote className="h-12 w-12" />
         <p className="text-lg">

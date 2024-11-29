@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 const HoverImg = () => {
   return (
@@ -54,9 +54,7 @@ const HoverImg = () => {
 
             {/* Default Title */}
             <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
-              <h2 className="text-2xl font-semibold text-white">
-                {image.head}
-              </h2>
+              <h2 className="text-2xl  text-white">{image.head}</h2>
             </div>
 
             {/* Hover Content */}
@@ -68,10 +66,10 @@ const HoverImg = () => {
                   href={image.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white hover:underline"
+                  className="flex items-center gap-2 text-white hover:text-[#d4af35]"
                 >
                   Explore
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowUpRight className="inline" />
                 </a>
               </div>
             </div>

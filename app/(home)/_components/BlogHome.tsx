@@ -148,16 +148,16 @@ const BlogHome = () => {
                     ></div>
 
                     {/* Content Section */}
-                    <div className="flex flex-col justify-between p-4 h-[50%]">
+                    <div className="flex flex-col justify-between p-4 h-[50%] group cursor-pointer">
                       <p className="text-gray-500 text-sm mt-2">{item.date}</p>
-                      <h2 className="text-lg font-semibold text-black leading-tight">
+                      <h2 className="text-lg font-semibold text-black group-hover:text-[#69bf3c] leading-tight">
                         {item.title}
                       </h2>
                       <p className="text-sm text-black py-2 ">{item.text}</p>
                       {item.link && (
                         <Link
                           href={item.link}
-                          className="mt-auto flex hover:text-[#69bf3c]"
+                          className="mt-auto flex group-hover:text-[#69bf3c]"
                         >
                           Learn more
                           <ArrowUpRight className="inline" />
@@ -196,13 +196,13 @@ const BlogHome = () => {
               <ArrowRightCircle />
             </button>
           </div>
-          <Link
+          {/* <Link
             href="/newsroom"
             className="text-blue-600 hover:underline flex items-center"
           >
             Explore Newsroom
             <ArrowRight className="ml-2" />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

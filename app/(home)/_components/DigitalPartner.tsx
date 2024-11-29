@@ -86,11 +86,11 @@ const DigitalPartner = () => {
   const visibleCards = isSmallScreen ? 1 : 3;
 
   return (
-    <div className="h-auto mx-auto w-full max-w-7xl py-10 flex flex-col">
+    <div className="h-auto mx-auto w-full max-w-7xl py-14 flex flex-col">
       {/* Header Section */}
       <div className="flex flex-col lg:flex-row lg:justify-between items-center w-full mb-6">
         <div className="flex flex-col text-center lg:text-start w-full justify-start mx-5 ">
-          <h1 className="text-4xl  text-white font-bold  lg:mb-0">
+          <h1 className="text-4xl  text-white font-bold ">
             Green Revolution Cooling
           </h1>
           <p className="mt-2 text-white text-xl">
@@ -116,7 +116,7 @@ const DigitalPartner = () => {
       </div>
 
       {/* Card Section */}
-      <div className="relative py-10 px-5 overflow-hidden">
+      <div className="relative px-5 overflow-hidden">
         {isSmallScreen ? (
           <div className="flex flex-col gap-10">
             {cardData.map((card) => (
@@ -157,7 +157,7 @@ const DigitalPartner = () => {
             {cardData.map((card) => (
               <motion.div
                 key={card.id}
-                whileHover={{ scale: 1.05, y: -10 }}
+                // whileHover={{ scale: 1.05, y: -10 }}
                 className="bg-gray-100 rounded-lg shadow-lg p-6 w-full sm:w-[45vw] md:w-[30vw] lg:w-[25vw] flex-shrink-0 h-[320px] flex flex-col justify-between"
               >
                 <img
@@ -183,7 +183,7 @@ const DigitalPartner = () => {
 
       {/* Navigation for Small Screens */}
       {isSmallScreen && (
-        <div className="flex justify-between mt-6">
+        <div className="flex justify-between ">
           <ArrowLeft
             onClick={handlePrev}
             className={`cursor-pointer ${

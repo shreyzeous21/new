@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 const Tech = () => {
   const cards = [
@@ -79,10 +80,10 @@ const Tech = () => {
   ];
 
   return (
-    <div className="py-10 max-w-7xl lg:w-full h-auto mx-5 justify-start lg:mx-auto flex flex-col">
-      <div className="h-auto w-full justify-center py-2 flex flex-col">
+    <div className="py-12 max-w-7xl lg:w-full h-auto mx-5 justify-start lg:mx-auto flex flex-col">
+      <div className="h-auto w-full justify-center  flex flex-col">
         <div className="flex flex-col lg:w-1/2 justify-start">
-          <h1 className="text-4xl text-[#243765] font-bold py-10">
+          <h1 className="text-4xl text-[#243765] font-bold mb-3 ">
             GRC Solutions
           </h1>
           {/* <p className="text-black text-sm py-4">
@@ -112,8 +113,8 @@ const Tech = () => {
                   className="w-10 h-10  rounded-full mt-4"
                 />
 
-                <span className="absolute bottom-4 right-4 text-2xl font-semibold text-gray-700 group-hover:text-white">
-                  &rarr;
+                <span className="absolute bottom-6 right-4 text-2xl font-semibold text-gray-700 group-hover:text-white">
+                  <ArrowUpRight />
                 </span>
               </a>
             </Link>
