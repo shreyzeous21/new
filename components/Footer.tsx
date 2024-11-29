@@ -178,19 +178,19 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           {/* col 1 */}
           <div className="">
+            <div className="bg-black h-1/2"></div>
             {cap.map((cap, index) => (
               <div key={index} className="mb-4">
                 <h1 className="mb-2 font-semibold text-xl">{cap.title}</h1>
                 <ul>
                   {cap.links.map((link, linkIndex) => (
                     <Link key={linkIndex} href={link.href}>
-                      <li className="py-1">{link.text}</li>
+                      <li className="py-1 hover:text-[#6cbd45]">{link.text}</li>
                     </Link>
                   ))}
                 </ul>
               </div>
             ))}
-            <div className=""></div>
           </div>
 
           {/* col 2 */}
@@ -217,7 +217,7 @@ const Footer = () => {
                 <ul>
                   {ind.links.map((link, linkIndex) => (
                     <Link key={linkIndex} href={link.href}>
-                      <li className="">{link.text}</li>
+                      <li className="hover:text-[#6cbd45]">{link.text}</li>
                     </Link>
                   ))}
                 </ul>
@@ -236,7 +236,7 @@ const Footer = () => {
                 <ul>
                   {about.links.map((link, linkIndex) => (
                     <Link key={linkIndex} href={link.href}>
-                      <li className="">{link.text}</li>
+                      <li className="hover:text-[#6cbd45]">{link.text}</li>
                     </Link>
                   ))}
                 </ul>
@@ -249,7 +249,7 @@ const Footer = () => {
                 <ul>
                   {res.links.map((link, linkIndex) => (
                     <Link key={linkIndex} href={link.href}>
-                      <li className="">{link.text}</li>
+                      <li className="hover:text-[#6cbd45]">{link.text}</li>
                     </Link>
                   ))}
                 </ul>
@@ -268,7 +268,9 @@ const Footer = () => {
                     <ul>
                       {careers.links.map((link, linkIndex) => (
                         <Link key={linkIndex} href={link.href}>
-                          <li className="">{link.region}</li>
+                          <li className="hover:text-[#6cbd45]">
+                            {link.region}
+                          </li>
                         </Link>
                       ))}
                     </ul>
@@ -285,7 +287,9 @@ const Footer = () => {
                     <ul>
                       {globalPresence.links.map((link, linkIndex) => (
                         <Link key={linkIndex} href={link.href}>
-                          <li className="py-1">{link.region}</li>
+                          <li className="py-1 hover:text-[#6cbd45]">
+                            {link.region}
+                          </li>
                         </Link>
                       ))}
                     </ul>
