@@ -6,6 +6,11 @@ const Breadcrumb = () => {
   const pathname = usePathname();
   const pathSegments = pathname.split("/").filter((segment) => segment);
 
+  // Don't render breadcrumbs on the home screen
+  if (pathname === "/") {
+    return null;
+  }
+
   return (
     <nav aria-label="breadcrumb" className="p-4 bg-gray-100">
       <ol className="flex space-x-2 text-sm">
@@ -22,7 +27,9 @@ const Breadcrumb = () => {
             <li key={index} className="flex items-center space-x-2">
               <span>/</span>
               {isLast ? (
-                <span className="text-gray-500">{decodeURIComponent(segment)}</span>
+                <span className="text-gray-500">
+                  {decodeURIComponent(segment)}
+                </span>
               ) : (
                 <Link href={href} className="text-blue-600 hover:underline">
                   {decodeURIComponent(segment)}

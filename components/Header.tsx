@@ -325,16 +325,18 @@ const Header = () => {
         <div className="flex flex-col w-full bg-[#243865] text-white">
           {/* Main Navigation */}
           <div className="h-full hidden lg:flex flex-row justify-between w-full items-center">
-            <div className="flex justify-center space-x-1 w-auto">
+            <div className="flex justify-center  w-auto">
               <Link
                 href="/"
-                className={`p-4 ${isActive("/") ? "bg-white text-black" : ""}`}
+                className={`p-4 border-r ${
+                  isActive("/") ? "bg-white text-black" : ""
+                }`}
               >
                 Home
               </Link>
               <Link
                 href="/solutions"
-                className={`p-4 ${
+                className={`p-4 border-r ${
                   pathname.startsWith("/solutions") ? "bg-white text-black" : ""
                 }`}
               >
@@ -342,7 +344,7 @@ const Header = () => {
               </Link>
               <Link
                 href="/products"
-                className={`p-4 ${
+                className={`p-4 border-r ${
                   pathname.startsWith("/products") ? "bg-white text-black" : ""
                 }`}
               >
@@ -350,7 +352,7 @@ const Header = () => {
               </Link>
               <Link
                 href="/impressionIt"
-                className={`p-4 ${
+                className={`p-4 border-r ${
                   pathname.startsWith("/impressionIt")
                     ? "bg-white text-black"
                     : ""
@@ -360,7 +362,7 @@ const Header = () => {
               </Link>
               <Link
                 href="/partners"
-                className={`p-4 ${
+                className={`p-4 border-r ${
                   pathname.startsWith("/partners") ? "bg-white text-black" : ""
                 }`}
               >
@@ -368,7 +370,7 @@ const Header = () => {
               </Link>
               <Link
                 href="/company"
-                className={`p-4 ${
+                className={`p-4 border-r ${
                   pathname.startsWith("/company") ? "bg-white text-black" : ""
                 }`}
               >
