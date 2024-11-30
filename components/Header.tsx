@@ -171,7 +171,7 @@ const Header = () => {
         ],
       },
       {
-        name: "ICEtank®",
+        name: "c",
         path: "/careers/internships",
         dropdownLinks: [
           { name: "Summer Internship", path: "/careers/internships/summer" },

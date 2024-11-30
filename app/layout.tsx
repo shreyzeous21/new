@@ -1,9 +1,10 @@
 import { Raleway } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
 import FooterUpper from "@/components/FooterUpper";
+import Navbar from "@/components/Navbar";
 
 const font = Raleway({ weight: "500", subsets: ["cyrillic"] });
 
@@ -18,7 +19,8 @@ export default function RootLayout({
         <title>GRC</title>
       </head>
       <body className={`${font.className} antialiased`}>
-        <Header />
+        {/* <Header /> */}
+        <Navbar />
         <Breadcrumb />
         {children}
         <FooterUpper />

@@ -4,13 +4,13 @@ import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Investors - My Website",
+    title: "Products - My Website",
     description: "Discover more about us.",
   };
 }
 
-const Investors = () => {
-  return <div>Investors</div>;
+const Products = () => {
+  return <div>Products-Ready IT</div>;
 };
 
-export default Investors;
+export default Products;
