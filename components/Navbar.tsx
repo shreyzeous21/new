@@ -172,10 +172,7 @@ const Navbar: React.FC = () => {
                     className="flex flex-row gap-5 mx-2 transition-all duration-200"
                   >
                     {item.subLinks.map((subLink) => (
-                      <li
-                        key={subLink.name}
-                        className="cursor-pointer hover:border-b border-green-500"
-                      >
+                      <li key={subLink.name} className="cursor-pointer ">
                         <Link href={subLink.path}>{subLink.name}</Link>
                       </li>
                     ))}
