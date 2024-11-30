@@ -4,11 +4,11 @@ const FooterUpper = () => {
   return (
     <div className="w-full h-[40vh]  flex-col mx-auto justify-center bg-gradient-to-tr from-green-500  to-blue-900 flex">
       <div className="flex lg:flex-row flex-col max-w-7xl lg:mx-auto mx-5  h-full justify-center lg:justify-between items-center gap-3  lg:w-full">
-        <div className=" flex flex-col gap-2">
+        <div className=" flex flex-col ">
           <h1 className="text-4xl text-white font-bold">
             Power Up & Cool Down
           </h1>
-          <p className="text-xl text-white">
+          <p className="text-lg mt-2 text-white">
             Discover How to Bring the Most Efficient Cooling Technology to Your
             Data Center
           </p>
@@ -16,7 +16,7 @@ const FooterUpper = () => {
         <div className="uppercase text-xl  items-center flex  justify-center">
           <button
             type="submit"
-            className="flex uppercase justify-center gap-2 items-center mx-auto shadow-xl text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#73c000] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-md group"
+            className="flex uppercase justify-center gap-2 items-center mx-auto shadow-xl text-lg bg-gray-50 backdrop-blur-md  isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#73c000] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-md group"
           >
             Request a Consultation
             <svg
