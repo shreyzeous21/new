@@ -119,14 +119,6 @@ const Navbar: React.FC = () => {
   // Using usePathname to track the current path
   const pathname = usePathname();
 
-  // State for the floating search modal
-  const [isSearchOpen, setSearchOpen] = useState(false);
-
-  // Toggle the search modal visibility
-  const toggleSearchModal = () => {
-    setSearchOpen(!isSearchOpen);
-  };
-
   return (
     <div className="h-auto lg:w-full lg:mx-auto mx-4 flex justify-center">
       <div className="w-full h-auto items-center flex flex-row justify-between">
@@ -157,7 +149,7 @@ const Navbar: React.FC = () => {
             </ul>
 
             {/* Utility Icons */}
-            <ul className="flex flex-row mx-4 cursor-pointer gap-2 items-center text-white">
+            <ul className="flex flex-row  cursor-pointer items-center text-white">
               {navItemsSec.map((item) => (
                 <li
                   key={item.name}
@@ -168,10 +160,6 @@ const Navbar: React.FC = () => {
                   <Link href={item.path}>{item.name}</Link>
                 </li>
               ))}
-              {/* Floating Search Icon
-              <li onClick={toggleSearchModal}>
-                <Search />
-              </li> */}
             </ul>
           </div>
 
