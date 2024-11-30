@@ -44,7 +44,7 @@ const Hero = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying] = useState(true);
   const [isMobile, setIsMobile] = useState(false); // State to track device type
 
   // Change the image every 3 seconds if the slideshow is playing
