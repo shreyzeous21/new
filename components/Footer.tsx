@@ -260,7 +260,7 @@ const Footer = () => {
 
           {/* col 4 */}
           <div className="text-sm ">
-            <Link href={"/"} className="font-bold text-lg">
+            <Link href={"/"} className="font-bold hover:text-[#6cbd45] text-lg">
               Customers
             </Link>
             <hr className="border border-blue-900 my-2 " />
