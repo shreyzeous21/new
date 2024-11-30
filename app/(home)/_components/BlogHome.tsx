@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  ArrowLeftCircle,
-  ArrowRightCircle,
-  ArrowUpRight,
-} from "lucide-react";
+import { ArrowLeftCircle, ArrowRightCircle, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -61,6 +57,7 @@ const newsItems = [
     date: "November 12, 2024",
     imageUrl: "/img2.png",
     link: "/shrey",
+    text: "In today’s data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
   },
   {
     id: 7,
@@ -68,6 +65,7 @@ const newsItems = [
     date: "November 12, 2024",
     imageUrl: "/img3.png",
     link: "/shrey",
+    text: "In today’s data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
   },
   {
     id: 8,
@@ -75,6 +73,7 @@ const newsItems = [
     date: "November 12, 2024",
     imageUrl: "/img4.png",
     link: "/shrey",
+    text: "In today’s data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
   },
 ];
 
@@ -124,14 +123,14 @@ const BlogHome = () => {
 
         {/* Carousel Section */}
         <div className="relative">
-          <div className="flex gap-6 overflow-hidden">
+          <div className="flex gap-6 ">
             <AnimatePresence initial={false}>
               {newsItems
                 .slice(currentIndex, currentIndex + itemsToShow)
                 .map((item) => (
                   <motion.div
                     key={item.id}
-                    className="bg-gray-100 rounded-lg overflow-hidden w-full lg:w-[28vw] flex-shrink-0 lg:h-[90vh] h-[60vh] flex flex-col"
+                    className="bg-gray-100 rounded-lg overflow-hidden w-full lg:w-[28vw] flex-shrink-0 lg:h-[80vh] h-[60vh] flex flex-col"
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
@@ -149,10 +148,19 @@ const BlogHome = () => {
                     {/* Content Section */}
                     <div className="flex flex-col justify-between p-4 h-[50%] group cursor-pointer">
                       <p className="text-gray-500 text-sm mt-2">{item.date}</p>
-                      <h2 className="text-lg font-semibold text-black group-hover:text-[#69bf3c] leading-tight">
-                        {item.title}
+                      <h2
+                        className="text-lg font-semibold text-black group-hover:text-[#69bf3c] leading-tight"
+                        title={item.title}
+                      >
+                        {item.title.length > 50
+                          ? `${item.title.substring(0, 50)}...`
+                          : item.title}
                       </h2>
-                      <p className="text-sm text-black py-2 ">{item.text}</p>
+                      <p className="text-sm text-black py-2 ">
+                        {item.text.length > 150
+                          ? `${item.text?.substring(0, 150)}...`
+                          : item.text}
+                      </p>
                       {item.link && (
                         <Link
                           href={item.link}
