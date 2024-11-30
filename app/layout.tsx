@@ -13,11 +13,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <title>GRC</title>
       </head>
-      <body className={`${font.className} antialiased`}>
+      <body className={`${font.className} `} suppressHydrationWarning>
         <Navbar />
         <Breadcrumb />
         {children}

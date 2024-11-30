@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 
@@ -14,7 +13,7 @@ const Contact = () => {
   const cardData = [
     {
       title: "Speak With Sales",
-      description: " Discuss your sales needs with our expert team.",
+      description: "Discuss your sales needs with our expert team.",
       link: "/sales",
     },
     {
@@ -31,7 +30,7 @@ const Contact = () => {
     },
     {
       title: "Speak With Sales",
-      description: " Discuss your sales needs with our expert team.",
+      description: "Discuss your sales needs with our expert team.",
       link: "/sales",
     },
     {
@@ -49,11 +48,19 @@ const Contact = () => {
   ];
 
   return (
-    <div className="h-screen w-full flex items-center justify-center bg-gray-100">
-      <div className="container flex flex-col items-center justify-center">
-        <h1 className="text-4xl text-blue-900 font-bold ">Connect with us</h1>
-        <span className="text-lg mb-8">How can we help you?</span>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 justify-center">
+    <div className="h-auto py-12 w-full flex items-center justify-center bg-gray-100">
+      <div className="flex flex-col items-center justify-center w-full ">
+        {/* Background Image Section */}
+        <div
+          className="bg-[url('/contact.jpg')] bg-cover bg-center flex flex-col items-center justify-center text-center w-full flex-grow"
+          style={{ minHeight: "250px" }}
+        >
+          <h1 className="text-4xl text-white font-bold ">Connect with us</h1>
+          <span className="text-lg  text-white">How can we help you?</span>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="container  max-w-screen-lg grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 justify-center mt-12">
           {cardData.map((card, idx) => (
             <div
               key={idx}
@@ -71,9 +78,9 @@ const Contact = () => {
               <div>
                 <a
                   href={card.link}
-                  className="inline-block mt-2 text-sm text-blue-600 group-hover:text-white"
+                  className="inline-block mt-2 text-sm group-hover:text-white"
                 >
-                  <button className="items-center flex ">
+                  <button className="items-center flex">
                     Learn more <ArrowUpRight />
                   </button>
                 </a>

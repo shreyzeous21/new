@@ -11,7 +11,7 @@ import Testimonial from "./_components/Testimonial";
 
 const Home = () => {
   return (
-    <div className=" flex flex-col h-auto w-full">
+    <div className="">
       <Hero />
       <div className="">
         <Overview />
