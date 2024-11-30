@@ -134,7 +134,7 @@ const Navbar: React.FC = () => {
                 <li
                   key={item.name}
                   className={`p-4 border-r border-[#3f5280] items-center ${
-                    pathname === item.path ? "bg-white text-[#243865]" : ""
+                    pathname === item.path ? "bg-white text-green-500" : ""
                   } cursor-pointer`}
                 >
                   <Link href={item.path}>{item.name}</Link>
