@@ -203,40 +203,6 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Floating Search Modal with Framer Motion for animation */}
-      {isSearchOpen && (
-        <motion.div
-          className="fixed top-0 left-0 w-full h-full bg-gray-600 bg-opacity-50 z-50 flex justify-center items-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          onClick={toggleSearchModal}
-        >
-          <motion.div
-            className="bg-white p-6 rounded-lg w-1/3"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            exit={{ scale: 0 }}
-            transition={{ duration: 0.3 }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h2 className="text-lg font-semibold mb-4">Search</h2>
-            <input
-              type="text"
-              className="w-full p-2 border border-gray-300 rounded-lg"
-              placeholder="Search..."
-            />
-            <button
-              className="mt-4 text-white bg-blue-500 px-4 py-2 rounded-lg"
-              onClick={toggleSearchModal}
-            >
-              Close
-            </button>
-          </motion.div>
-        </motion.div>
-      )}
     </div>
   );
 };
