@@ -207,21 +207,6 @@ const Footer = () => {
                 className="w-[15vw] h-auto"
               />
             </div>
-
-            {about.map((about, index) => (
-              <div key={index} className="mb-4 ">
-                <h1 className="mb-2 text-lg font-semibold">{about.title}</h1>
-                <ul>
-                  {about.links.map((link, linkIndex) => (
-                    <Link key={linkIndex} href={link.href}>
-                      <li className="text-sm hover:text-[#6cbd45]">
-                        {link.text}
-                      </li>
-                    </Link>
-                  ))}
-                </ul>
-              </div>
-            ))}
           </div>
 
           {/* col 2 */}
@@ -248,7 +233,24 @@ const Footer = () => {
                 <ul>
                   {ind.links.map((link, linkIndex) => (
                     <Link key={linkIndex} href={link.href}>
-                      <li className="hover:text-[#6cbd45]">{link.text}</li>
+                      <li className="hover:text-[#6cbd45] gap-3">
+                        {link.text}
+                      </li>
+                    </Link>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            <hr className="border border-blue-900 my-2 " />
+            {about.map((about, index) => (
+              <div key={index} className="mb-4 ">
+                <h1 className="mb-2 text-lg font-semibold">{about.title}</h1>
+                <ul>
+                  {about.links.map((link, linkIndex) => (
+                    <Link key={linkIndex} href={link.href}>
+                      <li className="text-sm gap-3 hover:text-[#6cbd45]">
+                        {link.text}
+                      </li>
                     </Link>
                   ))}
                 </ul>
@@ -269,7 +271,7 @@ const Footer = () => {
                 <ul>
                   {cap.links.map((link, linkIndex) => (
                     <Link key={linkIndex} href={link.href}>
-                      <li className="gap-2 hover:text-[#6cbd45]">
+                      <li className="gap-3 hover:text-[#6cbd45]">
                         {link.text}
                       </li>
                     </Link>
@@ -284,7 +286,7 @@ const Footer = () => {
                 <ul>
                   {res.links.map((link, linkIndex) => (
                     <Link key={linkIndex} href={link.href}>
-                      <li className="hover:text-[#6cbd45] gap-2">
+                      <li className="hover:text-[#6cbd45] gap-3">
                         {link.text}
                       </li>
                     </Link>
@@ -307,7 +309,7 @@ const Footer = () => {
                     <ul>
                       {careers.links.map((link, linkIndex) => (
                         <Link key={linkIndex} href={link.href}>
-                          <li className="hover:text-[#6cbd45] gap-2">
+                          <li className="hover:text-[#6cbd45] gap-3">
                             {link.region}
                           </li>
                         </Link>
@@ -326,7 +328,7 @@ const Footer = () => {
                     <ul>
                       {globalPresence.links.map((link, linkIndex) => (
                         <Link key={linkIndex} href={link.href}>
-                          <li className="gap-2 hover:text-[#6cbd45]">
+                          <li className="gap-3 hover:text-[#6cbd45]">
                             {link.region}
                           </li>
                         </Link>
