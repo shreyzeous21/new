@@ -186,12 +186,20 @@ const Footer = () => {
                 <h1 className="text-xl font-semibold">
                   Green Revolution Cooling, Inc.
                 </h1>
-                <p className="w-1/2">
+                <p className="w-1/2 text-sm">
                   11525 Stonehollow Dr. Ste. A-150 Austin, TX 78758 United
                   States
                 </p>
-                <span>tel: +1.512.692.8003</span>
-                <span>ContactUs@grcooling.com</span>
+                <span className="text-sm">
+                  <strong>tel:</strong>
+                  +1.512.692.8003
+                </span>
+                <Link
+                  href={"mailto:ContactUs@grcooling.com"}
+                  className="text-blue-500 hover:text-green-500 text-sm"
+                >
+                  ContactUs@grcooling.com
+                </Link>
               </div>
               <img
                 src="https://www.grcooling.com/wp-content/uploads/ios-9001-2015-badge-blue-175x82.jpg"
