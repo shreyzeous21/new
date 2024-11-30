@@ -35,15 +35,15 @@ const Navbar: React.FC = () => {
         { name: "Blockchain Computing", path: "/solutions/custom-software" },
         {
           name: "Enterprise / Cloud / Hyperscale",
-          path: "/solutions/cloud-solutions",
+          path: "/",
         },
         {
           name: "Edge",
-          path: "/solutions/cloud-solutions",
+          path: "/",
         },
         {
           name: "High-Performance Computing",
-          path: "/solutions/cloud-solutions",
+          path: "/",
         },
       ],
     },
@@ -51,12 +51,12 @@ const Navbar: React.FC = () => {
       name: "Products",
       path: "/products", // Path for this item
       subLinks: [
-        { name: "ICEraQ®", path: "/products/product-1" },
-        { name: "ICEtank®", path: "/products/product-2" },
-        { name: "HashRaQ MAX®", path: "/products/product-3" },
-        { name: "HashTank®", path: "/products/product-3" },
-        { name: "ElectroSafe® Fluids", path: "/products/product-3" },
-        { name: "Systems Manager", path: "/products/product-3" },
+        { name: "ICEraQ®", path: "/" },
+        { name: "ICEtank®", path: "/" },
+        { name: "HashRaQ MAX®", path: "/" },
+        { name: "HashTank®", path: "/" },
+        { name: "ElectroSafe® Fluids", path: "/" },
+        { name: "Systems Manager", path: "/" },
       ],
     },
     {
@@ -72,11 +72,11 @@ const Navbar: React.FC = () => {
       subLinks: [
         {
           name: "ITE and Solutions Providers",
-          path: "/partners/partnership-benefits",
+          path: "/",
         },
         {
           name: "GRC ElectroSafe® Fluid Partners",
-          path: "/partners/become-a-partner",
+          path: "/",
         },
       ],
     },
@@ -84,7 +84,7 @@ const Navbar: React.FC = () => {
       name: "Company",
       path: "/company", // Path for this item
       subLinks: [
-        { name: "About GRC", path: "/company/about-grc" },
+        { name: "About GRC", path: "/" },
         { name: "Our Team", path: "/company/our-team" },
         { name: "Our Promise of Quality", path: "/company/quality-promise" },
         { name: "Careers", path: "/company/careers" },
@@ -93,6 +93,20 @@ const Navbar: React.FC = () => {
   ];
 
   const navItemsSec: NavItem[] = [
+    {
+      name: "Blog",
+      path: "/contact", // Path for this item
+      subLinks: [
+        { name: "Compute Cooler. Run Smarter. Grow Faster", path: "/aboutus" },
+      ],
+    },
+    {
+      name: "Learning",
+      path: "/contact", // Path for this item
+      subLinks: [
+        { name: "Compute Cooler. Run Smarter. Grow Faster", path: "/aboutus" },
+      ],
+    },
     {
       name: "Contact",
       path: "/contact", // Path for this item
@@ -143,7 +157,7 @@ const Navbar: React.FC = () => {
             </ul>
 
             {/* Utility Icons */}
-            <ul className="flex flex-row mx-4 cursor-pointer gap-4 items-center text-white">
+            <ul className="flex flex-row mx-4 cursor-pointer gap-2 items-center text-white">
               {navItemsSec.map((item) => (
                 <li
                   key={item.name}
@@ -154,10 +168,10 @@ const Navbar: React.FC = () => {
                   <Link href={item.path}>{item.name}</Link>
                 </li>
               ))}
-              {/* Floating Search Icon */}
+              {/* Floating Search Icon
               <li onClick={toggleSearchModal}>
                 <Search />
-              </li>
+              </li> */}
             </ul>
           </div>
 
