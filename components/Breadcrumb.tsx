@@ -12,7 +12,7 @@ const Breadcrumb = () => {
   }
 
   return (
-    <nav aria-label="breadcrumb" className="p-2 bg-gray-200">
+    <nav aria-label="breadcrumb" className="py-1 px-4 bg-gray-200">
       <ol className="flex space-x-2 text-sm">
         <li>
           <Link href="/" className="text-blue-600 hover:underline">
