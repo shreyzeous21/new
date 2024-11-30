@@ -21,7 +21,7 @@ const AboutHome = () => {
       {/* Section Title */}
       <div className="mb-6 gap-5">
         <h2 className="text-4xl font-bold text-[#243765] ">About GRC</h2>
-        <p className="text-base  text-[#243765]">
+        <p className="text-lg mt-2 text-[#243765]">
           GRC (Green Revolution Cooling) was founded with a vision to change the
           way data centers are designed, built and operated.
         </p>

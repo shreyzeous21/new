@@ -117,7 +117,7 @@ const Navbar: React.FC = () => {
     <div className="h-auto lg:w-full lg:mx-auto mx-4 flex justify-center">
       <div className="w-full h-auto items-center flex flex-row justify-between">
         {/* Logo Section */}
-        <div className="border-r h-auto">
+        <div className="border-r h-full">
           <img
             src="https://www.grcooling.com/wp-content/uploads/grc-full-color-15-years.png"
             className="h-auto w-[20vw] py-3 px-2"

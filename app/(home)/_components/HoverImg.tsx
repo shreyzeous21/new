@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import {  ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const HoverImg = () => {
   return (
@@ -66,7 +66,7 @@ const HoverImg = () => {
                   href={image.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white hover:text-[#d4af35]"
+                  className="flex items-center gap-2 text-white hover:text-blue-900"
                 >
                   Explore
                   <ArrowUpRight className="inline" />

@@ -80,7 +80,7 @@ const Tech = () => {
   ];
 
   return (
-    <div className="py-12 max-w-7xl lg:w-full h-auto mx-5 justify-start lg:mx-auto flex flex-col">
+    <div className="py-14 max-w-7xl lg:w-full h-auto mx-5 justify-start lg:mx-auto flex flex-col">
       <div className="h-auto w-full justify-center  flex flex-col">
         <div className="flex flex-col lg:w-1/2 justify-start">
           <h1 className="text-4xl text-[#243765] font-bold mb-3 ">

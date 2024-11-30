@@ -86,14 +86,14 @@ const DigitalPartner = () => {
   const visibleCards = isSmallScreen ? 1 : 3;
 
   return (
-    <div className="h-auto mx-auto w-full max-w-7xl py-14 flex flex-col">
+    <div className="h-auto mx-auto w-full max-w-7xl py-16 flex flex-col">
       {/* Header Section */}
       <div className="flex flex-col lg:flex-row lg:justify-between items-center w-full mb-6">
         <div className="flex flex-col text-center lg:text-start w-full justify-start mx-5 ">
           <h1 className="text-4xl  text-white font-bold ">
             Green Revolution Cooling
           </h1>
-          <p className="mt-2 text-white text-xl">
+          <p className="mt-2 text-white text-lg">
             Redefining the Efficiency and Sustainability of Data Center Cooling
           </p>
         </div>
@@ -101,7 +101,7 @@ const DigitalPartner = () => {
           <ArrowLeft
             onClick={handlePrev}
             className={`cursor-pointer ${
-              currentIndex === 0 ? "text-gray-300" : "text-black"
+              currentIndex === 0 ? "text-gray-300" : "text-white"
             }`}
           />
           <ArrowRight
@@ -109,7 +109,7 @@ const DigitalPartner = () => {
             className={`cursor-pointer ${
               currentIndex + visibleCards >= cardData.length
                 ? "text-gray-300"
-                : "text-black"
+                : "text-white"
             }`}
           />
         </div>

@@ -1,6 +1,5 @@
 import { Raleway } from "next/font/google";
 import "./globals.css";
-// import Header from "@/components/Header";
 import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
 import FooterUpper from "@/components/FooterUpper";
@@ -19,7 +18,6 @@ export default function RootLayout({
         <title>GRC</title>
       </head>
       <body className={`${font.className} antialiased`}>
-        {/* <Header /> */}
         <Navbar />
         <Breadcrumb />
         {children}
