@@ -19,10 +19,11 @@ const AboutHome = () => {
   return (
     <div className="py-10 lg:w-full h-auto flex flex-col max-w-7xl lg:mx-auto mx-4 justify-center">
       {/* Section Title */}
-      <div className="mb-6">
+      <div className="mb-6 gap-5">
         <h2 className="text-4xl font-bold text-[#243765] ">About GRC</h2>
         <p className="text-base  text-[#243765]">
-          The Immersion Cooling Authority
+          GRC (Green Revolution Cooling) was founded with a vision to change the
+          way data centers are designed, built and operated.
         </p>
       </div>
 
