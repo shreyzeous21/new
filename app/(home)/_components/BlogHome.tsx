@@ -123,14 +123,14 @@ const BlogHome = () => {
 
         {/* Carousel Section */}
         <div className="relative">
-          <div className="flex gap-6 ">
+          <div className="flex gap-6  ">
             <AnimatePresence initial={false}>
               {newsItems
                 .slice(currentIndex, currentIndex + itemsToShow)
                 .map((item) => (
                   <motion.div
                     key={item.id}
-                    className="bg-gray-100 rounded-lg overflow-hidden w-full lg:w-[28vw] flex-shrink-0 lg:h-[70vh] h-[60vh] flex flex-col"
+                    className="bg-gray-100  rounded-lg  overflow-hidden w-full lg:w-[28vw] flex-shrink-0 lg:h-[70vh] h-[60vh] flex flex-col"
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
@@ -141,7 +141,7 @@ const BlogHome = () => {
                   >
                     {/* Image Section */}
                     <div
-                      className="flex-shrink-0 h-[40%] bg-cover bg-center transform transition-transform duration-300 ease-in-out hover:scale-110"
+                      className="flex-shrink-0  h-[40%] bg-cover bg-center transform transition-transform duration-300 ease-in-out hover:scale-110"
                       style={{ backgroundImage: `url(${item.imageUrl})` }}
                     ></div>
 

@@ -24,7 +24,7 @@ const cardData = [
   {
     id: 3,
     icon: "/digital/icon-scaleable.png",
-    title: "Scaleable",
+    title: "Scalable",
     description:
       "Reduce planning & forecasting. Easily add capacity as your operation grows.",
     link: "Learn more",
@@ -48,7 +48,7 @@ const cardData = [
   {
     id: 6,
     icon: "/digital/icon-efficient.png",
-    title: "Resilient",
+    title: "Efficient",
     description:
       "Experience a <1.03 pPUE, reduce server power use by an average of 11%, and cut power consumed for IT cooling by up to 90%.",
     link: "Learn more",
@@ -90,7 +90,7 @@ const DigitalPartner = () => {
       {/* Header Section */}
       <div className="flex flex-col lg:flex-row lg:justify-between items-center w-full mb-6">
         <div className="flex flex-col text-center lg:text-start w-full justify-start mx-5 ">
-          <h1 className="text-4xl  text-white font-bold ">
+          <h1 className="text-4xl text-white font-bold">
             Green Revolution Cooling
           </h1>
           <p className="mt-2 text-white text-lg">
@@ -117,73 +117,44 @@ const DigitalPartner = () => {
 
       {/* Card Section */}
       <div className="relative px-5 overflow-hidden">
-        {isSmallScreen ? (
-          <div className="flex flex-col gap-10">
-            {cardData.map((card) => (
-              <motion.div
-                key={card.id}
-                whileHover={{ scale: 1.05, y: -10 }}
-                className="bg-gray-100 rounded-lg shadow-lg p-6 h-[320px] flex flex-col justify-between"
+        <motion.div
+          className="flex gap-10"
+          initial={{ x: 0 }}
+          animate={{ x: -currentIndex * (100 / visibleCards) + "%" }}
+          transition={{ duration: 0.5 }}
+          style={{
+            width: `${(cardData.length / visibleCards) * 100}%`,
+          }}
+        >
+          {cardData.map((card) => (
+            <motion.div
+              key={card.id}
+              whileHover={{ scale: 1.05, y: -10 }}
+              className="bg-gray-100 mt-5 rounded-lg shadow-lg p-6 w-full sm:w-[45vw] md:w-[30vw] lg:w-[25vw] flex-shrink-0 h-[320px] flex flex-col justify-between"
+            >
+              <img
+                src={card.icon}
+                alt={card.title}
+                className="w-[7rem] h-auto"
+              />
+              <h2 className="text-xl text-[#69bf3c] font-semibold">
+                {card.title}
+              </h2>
+              <p className="text-gray-600 text-sm">{card.description}</p>
+              <a
+                href="#"
+                className="text-black hover:text-[#69bf3c] font-medium"
               >
-                <img
-                  src={card.icon}
-                  alt={card.title}
-                  className="h-auto w-[20vw]"
-                />
-                <h2 className="text-xl text-[#69bf3c] font-semibold">
-                  {card.title}
-                </h2>
-                <p className="text-gray-600">{card.description}</p>
-                <a
-                  href="#"
-                  className="text-black hover:text-[#69bf3c] font-medium"
-                >
-                  {card.link}
-                  <ArrowUpRight className="inline" />
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        ) : (
-          <motion.div
-            className="flex gap-10"
-            initial={{ x: 0 }}
-            animate={{ x: -currentIndex * (100 / visibleCards) + "%" }}
-            transition={{ duration: 0.5 }}
-            style={{
-              width: `${(cardData.length / visibleCards) * 100}%`,
-            }}
-          >
-            {cardData.map((card) => (
-              <motion.div
-                key={card.id}
-                // whileHover={{ scale: 1.05, y: -10 }}
-                className="bg-gray-100 rounded-lg shadow-lg p-6 w-full sm:w-[45vw] md:w-[30vw] lg:w-[25vw] flex-shrink-0 h-[320px] flex flex-col justify-between"
-              >
-                <img
-                  src={card.icon}
-                  alt={card.title}
-                  className="w-[7rem] h-auto"
-                />
-                <h2 className="text-xl text-[#69bf3c] font-semibold">
-                  {card.title}
-                </h2>
-                <p className="text-gray-600 text-sm ">{card.description}</p>
-                <a
-                  href="#"
-                  className="text-black hover:text-[#69bf3c] font-medium"
-                >
-                  {card.link} <ArrowUpRight className="inline" />
-                </a>
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
+                {card.link} <ArrowUpRight className="inline" />
+              </a>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
 
       {/* Navigation for Small Screens */}
       {isSmallScreen && (
-        <div className="flex justify-between ">
+        <div className="flex justify-between mt-4">
           <ArrowLeft
             onClick={handlePrev}
             className={`cursor-pointer ${

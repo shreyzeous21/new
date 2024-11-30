@@ -44,7 +44,7 @@ const Hero = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [isMobile, setIsMobile] = useState(false); // State to track device type
 
   // Change the image every 3 seconds if the slideshow is playing
@@ -73,16 +73,16 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[80vh] bg-[#243765] text-white flex flex-col items-center">
+    <div className="relative w-full h-[80vh] bg-black text-white flex flex-col items-center">
       {/* Container for the sliding images */}
       <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
         {/* Animated Image Section */}
         <motion.div
           key={currentIndex}
           className="w-full h-full absolute"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
           <Image
@@ -90,13 +90,13 @@ const Hero = () => {
             alt={slides[currentIndex].imageName}
             layout="fill"
             objectFit="cover"
-            className="object-cover opacity-60"
+            className="object-cover opacity-50"
           />
         </motion.div>
       </div>
 
       {/* Buttons for Image Names */}
-      <div className="absolute bottom-5 z-10 flex justify-center w-full gap-5">
+      <div className="absolute bottom-4 z-10 flex justify-center w-full gap-5">
         {slides.map((slide, index) => (
           <button
             key={index}
@@ -113,14 +113,14 @@ const Hero = () => {
 
       {/* Text Section */}
       <div
-        className="absolute bottom-10 left-4 w-[90%]  h-auto 
+        className="absolute bottom-10 left-4 w-[90%] py-10 h-auto 
       lg:top-1/2 lg:left-10  md:w-1/2 md:h-1/6 
       z-10 flex flex-col  justify-center p-4 md:p-6"
       >
         <h1 className="text-5xl font-bold mb-8">
           Redefining the Efficiency and Sustainability of Data Center Cooling
         </h1>
-        <p className="text-gray-200 text-xl  mb-10">
+        <p className="text-white text-xl  mb-10">
           {isMobile
             ? slides[currentIndex].text.mobile // Show mobile text
             : slides[currentIndex].text.desktop}{" "}

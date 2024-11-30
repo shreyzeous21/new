@@ -93,16 +93,25 @@ const Navbar: React.FC = () => {
   const navItemsSec: NavItem[] = [
     {
       name: "Blog",
-      path: "/contact", // Path for this item
+      path: "/blog", // Path for this item
       subLinks: [
         { name: "Compute Cooler. Run Smarter. Grow Faster", path: "/aboutus" },
       ],
     },
     {
       name: "Learning",
-      path: "/contact", // Path for this item
+      path: "/learning", // Path for this item
       subLinks: [
-        { name: "Compute Cooler. Run Smarter. Grow Faster", path: "/aboutus" },
+        { name: "Paper", path: "/" },
+        { name: "Photo Gallery", path: "/" },
+        { name: "Case Studies", path: "/" },
+        { name: "E-Books", path: "/" },
+        { name: "Videos", path: "/" },
+        { name: "Webinars", path: "/" },
+        { name: "Data seeds", path: "/" },
+        { name: " Guides", path: "/" },
+        { name: " Analytic reports", path: "/" },
+        { name: " Grocers", path: "/" },
       ],
     },
     {
@@ -191,7 +200,7 @@ const Navbar: React.FC = () => {
                     className="flex flex-row gap-2 mx-2 transition-all duration-200"
                   >
                     {item.subLinks.map((subLink) => (
-                      <li key={subLink.name} className="cursor-pointer ">
+                      <li key={subLink.name} className="text-sm hover:text-green-500 cursor-pointer ">
                         <Link href={subLink.path}>{subLink.name}</Link>
                       </li>
                     ))}
