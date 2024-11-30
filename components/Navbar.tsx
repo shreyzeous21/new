@@ -1,9 +1,7 @@
 "use client";
-import { Search } from "lucide-react";
-import React, { useState } from "react";
 import Link from "next/link"; // Import Link from Next.js
 import { usePathname } from "next/navigation"; // Use for detecting current path
-import { motion } from "framer-motion";
+import React from "react";
 
 // Type definitions for nav item and sub-link
 interface SubLink {
