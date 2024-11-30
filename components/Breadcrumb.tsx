@@ -13,7 +13,7 @@ const Breadcrumb = () => {
 
   return (
     <nav aria-label="breadcrumb" className=" bg-gray-200">
-      <div className="container mx-auto justify-center px-10">
+      <div className="container mx-auto justify-center px-3">
         <ol className="flex space-x-2 text-sm">
           <li>
             <Link href="/" className="text-blue-600 hover:underline">
