@@ -233,7 +233,7 @@ const Footer = () => {
                 <ul>
                   {ind.links.map((link, linkIndex) => (
                     <Link key={linkIndex} href={link.href}>
-                      <li className="hover:text-[#6cbd45] gap-3">
+                      <li className="hover:text-[#6cbd45] gap-4">
                         {link.text}
                       </li>
                     </Link>
@@ -248,7 +248,7 @@ const Footer = () => {
                 <ul>
                   {about.links.map((link, linkIndex) => (
                     <Link key={linkIndex} href={link.href}>
-                      <li className="text-sm gap-3 hover:text-[#6cbd45]">
+                      <li className="text-sm gap-4 hover:text-[#6cbd45]">
                         {link.text}
                       </li>
                     </Link>
@@ -298,7 +298,7 @@ const Footer = () => {
 
           {/* col 5 */}
           <div className="text-sm ">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-4">
               <div>
                 {careers.map((careers, index) => (
                   <div key={index} className="mb-4 ">
@@ -343,7 +343,7 @@ const Footer = () => {
         </div>
         {/* 2 - Capabilities Grid */}
         <div className="mt-10 text-sm flex justify-center flex-col">
-          <p className="text-gray-500">
+          <p className="text-black">
             Green Revolution Cooling, Inc. (“GRC”) believes this information to
             be accurate; however, GRC does not make any representation or
             warranty, express or implied, as to the accuracy or completeness of
@@ -352,7 +352,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <hr className="border-t border-blue-900 my-4" />
+        <hr className="border border-blue-900 my-2 " />
 
         {/* 3 - Social Links */}
         <div className="flex flex-row justify-center py-3 gap-4 flex-wrap">
