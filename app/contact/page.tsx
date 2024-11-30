@@ -71,7 +71,7 @@ const Contact = () => {
               <div>
                 <a
                   href={card.link}
-                  className="inline-block mt-4 text-sm font-semibold text-blue-600 group-hover:text-white"
+                  className="inline-block mt-2 text-sm text-blue-600 group-hover:text-white"
                 >
                   <button className="items-center flex ">
                     Learn more <ArrowUpRight />
