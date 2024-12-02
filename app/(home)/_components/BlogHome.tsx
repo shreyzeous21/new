@@ -128,13 +128,13 @@ const BlogHome = () => {
         <div className="relative">
           <div className="overflow-hidden">
             <AnimatePresence initial={false}>
-              <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:h-[80vh] h-[50vh]  gap-6">
+              <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:h-[70vh] h-[50vh]  gap-6">
                 {newsItems
                   .slice(currentIndex, currentIndex + itemsToShow)
                   .map((item) => (
                     <motion.div
                       key={item.id}
-                      className="bg-gray-200 rounded-lg overflow-hidden flex flex-col"
+                      className="bg-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col"
                       // style={{ aspectRatio: "1 / 2" }}
                       initial={{ opacity: 0, x: 100 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -157,7 +157,7 @@ const BlogHome = () => {
                           <p className="text-sm text-gray-500 mb-2">
                             {item.date}
                           </p>
-                          <h2 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 s group-hover:text-[#69bf3c] transition-colors duration-300">
+                          <h2 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2  group-hover:text-[#69bf3c] transition-colors duration-300">
                             {item.title}
                           </h2>
                           <p className="text-sm text-gray-600 mb-4 line-clamp-3">
