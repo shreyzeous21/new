@@ -6,10 +6,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/effect-flip";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 // Import required modules
-import { Pagination } from "swiper/modules";
+import { EffectFlip, Navigation } from "swiper/modules";
 
 const cardData = [
   {
@@ -79,46 +81,46 @@ const DigitalPartner = () => {
   }, []);
 
   return (
-    <div className="h-auto mx-auto w-full max-w-6xl py-16 flex flex-col">
+    <div className="h-auto mx-auto w-full max-w-6xl py-16 flex flex-col items-center justify-center">
       {/* Header Section */}
-      <div className="flex flex-col lg:flex-row lg:justify-between items-center w-full mb-6">
-        <div className="flex flex-col text-center lg:text-start w-full justify-start mx-5">
-          <h1 className="text-4xl text-white font-bold">
-            Green Revolution Cooling
-          </h1>
-          <p className="mt-2 text-white text-lg">
-            Redefining the Efficiency and Sustainability of Data Center Cooling
-          </p>
-        </div>
+      <div className="flex flex-col items-center mb-6 text-center">
+        <h1 className="text-4xl text-white font-bold">
+          Green Revolution Cooling
+        </h1>
+        <p className="mt-2 text-white text-lg">
+          Redefining the Efficiency and Sustainability of Data Center Cooling
+        </p>
       </div>
 
       {/* Swiper Section */}
-      <div className="relative px-10 overflow-hidden">
+      <div className="relative w-full px-10 overflow-hidden">
         <Swiper
+          effect="flip" // Flip effect for slides
+          grabCursor={true} // Enable grab cursor on hover
+          pagination={{ clickable: true }}
+          navigation={true}
+          modules={[EffectFlip, Navigation]} // Import modules for flip, pagination, and navigation
+          className="mySwiper"
           slidesPerView={isSmallScreen ? 1 : 3} // 1 slide per view for small screens
           spaceBetween={30}
-          pagination={{
-            clickable: true,
-            el: ".swiper-pagination", // Target custom pagination container
-          }}
-          modules={[Pagination]}
-          className="mySwiper"
         >
           {cardData.map((card) => (
             <SwiperSlide key={card.id}>
-              <div className="bg-gray-100 mt-5 rounded-lg shadow-lg p-6 w-full sm:w-[20vw] lg:w-[22vw] h-[300px] flex flex-col justify-between">
+              <div className="bg-gray-100 mt-5 rounded-lg shadow-lg p-6 w-full sm:w-[20vw] lg:w-[40vw] h-[300px] flex flex-col justify-between mx-auto">
                 <img
                   src={card.icon}
                   alt={card.title}
-                  className="w-[7rem] h-auto"
+                  className="w-[7rem] h-auto mx-auto"
                 />
-                <h2 className="text-xl text-[#69bf3c] font-semibold">
+                <h2 className="text-xl text-[#69bf3c] font-semibold text-center">
                   {card.title}
                 </h2>
-                <p className="text-gray-600 text-sm">{card.description}</p>
+                <p className="text-gray-600 text-sm text-center">
+                  {card.description}
+                </p>
                 <a
                   href="#"
-                  className="text-black hover:text-[#69bf3c] font-medium"
+                  className="text-black hover:text-[#69bf3c] font-medium text-center"
                 >
                   {card.link}
                 </a>
@@ -126,9 +128,6 @@ const DigitalPartner = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-
-        {/* Custom Pagination */}
-        <div className="swiper-pagination flex justify-center"></div>
       </div>
     </div>
   );
