@@ -3,33 +3,32 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
 
 // Example array of testimonials
 const testimonials = [
   {
     id: 1,
     quote:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est et fugiat, laborum veniam tempora quaerat ullam enim eos temporibus commodi odit id.",
-    name: "Dr. Shrey",
-    designation: "CEO",
-    imgSrc: "/placeholder.svg?height=80&width=80",
+      "Immersion-cooled systems do not require chillers, CRAC units, raised flooring, etc. This method has the potential to cut in half the construction cost",
+    name: "David Prucnal, P.E. at NSA, United States",
   },
   {
     id: 2,
     quote:
-      "Quis voluptatum voluptatem earum rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Est et fugiat, laborum veniam tempora quaerat.",
-    name: "Dr. Anna",
-    designation: "CTO",
-    imgSrc: "/placeholder.svg?height=80&width=80",
+      "We saturated the power envelope by putting twice as many systems as we would normally have, if it had a normal way of cooling",
+    name: "Laurent Clerc, VP of Information Technology at CGG, France",
   },
   {
     id: 3,
     quote:
-      "Veritatis, provident dolores? Quis voluptatum voluptatem earum rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Est et fugiat.",
-    name: "Dr. Raj",
-    designation: "COO",
-    imgSrc: "/placeholder.svg?height=80&width=80",
+      " The GRC system is reducing our cooling energy consumption by up to 90%, bringing down our total energy cost by around 35%",
+    name: "CTO at DownUnder GeoSolutions, Australia",
+  },
+  {
+    id: 4,
+    quote:
+      " GRC’s system enabled the Tsubame-KFC to rank #1 on the Green500 list of the most efficient supercomputers in the world",
+    name: "Tokyo Institute of Technology, Japan Previous Slide",
   },
 ];
 
@@ -70,20 +69,10 @@ const Testimonial = () => {
                   {testimonials[currentIndex].quote}
                 </p>
                 <div className="flex items-center justify-center space-x-4">
-                  <Image
-                    src={testimonials[currentIndex].imgSrc}
-                    alt={testimonials[currentIndex].name}
-                    width={64}
-                    height={64}
-                    className="h-16 w-16 rounded-full object-cover"
-                  />
                   <div className="text-left">
                     <h3 className="text-lg font-semibold text-gray-900">
                       {testimonials[currentIndex].name}
                     </h3>
-                    <p className="text-gray-600">
-                      {testimonials[currentIndex].designation}
-                    </p>
                   </div>
                 </div>
               </motion.div>
