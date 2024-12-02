@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import Link from "next/link";
@@ -13,8 +14,8 @@ export function DesktopNav({ navItems, navItemsSec }: DesktopNavProps) {
   const pathname = usePathname();
 
   return (
-    <div className="hidden lg:flex h-auto w-full mx-auto justify-center">
-      <div className="w-full h-auto items-center flex flex-row justify-between">
+    <div className="hidden lg:flex h-auto w-full  justify-center">
+      <div className="w-full h-auto  items-center flex flex-row justify-between">
         <div className="border-r h-full">
           <img
             src="https://www.grcooling.com/wp-content/uploads/grc-full-color-15-years.png"
@@ -23,7 +24,7 @@ export function DesktopNav({ navItems, navItemsSec }: DesktopNavProps) {
           />
         </div>
 
-        <div className="justify-center w-full flex h-auto flex-col">
+        <div className="justify-center w-full  flex h-auto flex-col">
           <div className="flex flex-row justify-between items-center bg-[#243865]">
             <ul className="flex flex-row items-center w-full text-white">
               {navItems.map((item) => (
