@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import Link from "next/link";
 import React from "react";
-import { Facebook, Twitter, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 // Define interfaces for the links and sections
 interface SocialLink {
@@ -63,6 +64,12 @@ const Footer = () => {
     {
       name: "LinkedIn",
       icon: <Linkedin />,
+      color: "text-blue-700",
+      hoverColor: "hover:text-blue-700",
+    },
+    {
+      name: "Instagram",
+      icon: <Instagram />,
       color: "text-blue-700",
       hoverColor: "hover:text-blue-700",
     },

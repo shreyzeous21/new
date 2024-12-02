@@ -133,7 +133,7 @@ const BlogHome = () => {
                 .map((item) => (
                   <motion.div
                     key={item.id}
-                    className="bg-gray-100 rounded-lg overflow-hidden w-full lg:w-[28vw] flex-shrink-0 lg:h-[70vh] h-[60vh] flex flex-col"
+                    className="bg-gray-100 rounded-lg overflow-hidden w-full lg:w-[28vw] flex-shrink-0 lg:h-[60vh] h-[60vh] flex flex-col"
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
@@ -149,7 +149,7 @@ const BlogHome = () => {
                     ></div>
 
                     {/* Content Section */}
-                    <div className="flex flex-col justify-between p-4 h-[50%] group cursor-pointer">
+                    <div className="flex flex-col justify-between p-4 h-[40vh] group cursor-pointer">
                       <p className="text-gray-500 text-sm mt-2">{item.date}</p>
                       <h2
                         className="text-lg font-semibold text-black group-hover:text-[#69bf3c] leading-tight"
