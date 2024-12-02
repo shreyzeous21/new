@@ -96,7 +96,7 @@ const Tech = () => {
         </div>
 
         {/* Cards Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 w-full">
           {cards.map((card) => (
             <Link key={card.id} href={card.link} legacyBehavior>
               <a className="relative bg-white border border-gray-200 shadow-sm p-4 sm:p-6 flex flex-col gap-4 sm:gap-20 justify-between transition-all duration-300 sm:hover:bg-gradient-to-r sm:hover:from-green-500 sm:hover:to-blue-900 group">
