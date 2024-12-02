@@ -1,17 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
+
 import React, { useState, useEffect } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-flip";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-// Import required modules
-import { EffectFlip, Navigation } from "swiper/modules";
+import { motion } from "framer-motion";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 
 const cardData = [
   {
@@ -65,11 +56,12 @@ const cardData = [
 ];
 
 const DigitalPartner = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 768); // Detect mobile screen size
+      setIsSmallScreen(window.innerWidth < 768);
     };
 
     handleResize();
@@ -80,55 +72,105 @@ const DigitalPartner = () => {
     };
   }, []);
 
+  const handleNext = () => {
+    const visibleCards = isSmallScreen ? 1 : 3;
+    setCurrentIndex((prevIndex) =>
+      prevIndex + visibleCards < cardData.length ? prevIndex + 1 : prevIndex
+    );
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : 0));
+  };
+
+  const visibleCards = isSmallScreen ? 1 : 3;
+
   return (
-    <div className="h-auto mx-auto w-full max-w-6xl py-16 flex flex-col items-center justify-center">
+    <div className="h-auto mx-auto w-full max-w-7xl py-16 flex flex-col">
       {/* Header Section */}
-      <div className="flex flex-col items-center mb-6 text-center">
-        <h1 className="text-4xl text-white font-bold">
-          Green Revolution Cooling
-        </h1>
-        <p className="mt-2 text-white text-lg">
-          Redefining the Efficiency and Sustainability of Data Center Cooling
-        </p>
+      <div className="flex flex-col lg:flex-row lg:justify-between items-center w-full mb-6">
+        <div className="flex flex-col text-center lg:text-start w-full justify-start mx-5 ">
+          <h1 className="text-4xl text-white font-bold">
+            Green Revolution Cooling
+          </h1>
+          <p className="mt-2 text-white text-lg">
+            Redefining the Efficiency and Sustainability of Data Center Cooling
+          </p>
+        </div>
+        <div className="hidden lg:flex gap-4">
+          <ArrowLeft
+            onClick={handlePrev}
+            className={`cursor-pointer ${
+              currentIndex === 0 ? "text-gray-300" : "text-white"
+            }`}
+          />
+          <ArrowRight
+            onClick={handleNext}
+            className={`cursor-pointer ${
+              currentIndex + visibleCards >= cardData.length
+                ? "text-gray-300"
+                : "text-white"
+            }`}
+          />
+        </div>
       </div>
 
-      {/* Swiper Section */}
-      <div className="relative w-full px-10 overflow-hidden">
-        <Swiper
-          effect="flip" // Flip effect for slides
-          grabCursor={true} // Enable grab cursor on hover
-          pagination={{ clickable: true }}
-          navigation={true}
-          modules={[EffectFlip, Navigation]} // Import modules for flip, pagination, and navigation
-          className="mySwiper"
-          slidesPerView={isSmallScreen ? 1 : 3} // 1 slide per view for small screens
-          spaceBetween={30}
+      {/* Card Section */}
+      <div className="relative px-5 overflow-hidden">
+        <motion.div
+          className="flex gap-10"
+          initial={{ x: 0 }}
+          animate={{ x: -currentIndex * (100 / visibleCards) + "%" }}
+          transition={{ duration: 0.5 }}
+          style={{
+            width: `${(cardData.length / visibleCards) * 100}%`,
+          }}
         >
           {cardData.map((card) => (
-            <SwiperSlide key={card.id}>
-              <div className="bg-gray-100 mt-5 rounded-lg shadow-lg p-6 w-full sm:w-[20vw] lg:w-[40vw] h-[300px] flex flex-col justify-between mx-auto">
-                <img
-                  src={card.icon}
-                  alt={card.title}
-                  className="w-[7rem] h-auto mx-auto"
-                />
-                <h2 className="text-xl text-[#69bf3c] font-semibold text-center">
-                  {card.title}
-                </h2>
-                <p className="text-gray-600 text-sm text-center">
-                  {card.description}
-                </p>
-                <a
-                  href="#"
-                  className="text-black hover:text-[#69bf3c] font-medium text-center"
-                >
-                  {card.link}
-                </a>
-              </div>
-            </SwiperSlide>
+            <motion.div
+              key={card.id}
+              whileHover={{ scale: 1.05, y: -10 }}
+              className="bg-gray-100 mt-5 rounded-lg shadow-lg p-6 w-full sm:w-[45vw] md:w-[30vw] lg:w-[25vw] flex-shrink-0 h-[320px] flex flex-col justify-between"
+            >
+              <img
+                src={card.icon}
+                alt={card.title}
+                className="w-[7rem] h-auto"
+              />
+              <h2 className="text-xl text-[#69bf3c] font-semibold">
+                {card.title}
+              </h2>
+              <p className="text-gray-600 text-sm">{card.description}</p>
+              <a
+                href="#"
+                className="text-black hover:text-[#69bf3c] font-medium"
+              >
+                {card.link} <ArrowUpRight className="inline" />
+              </a>
+            </motion.div>
           ))}
-        </Swiper>
+        </motion.div>
       </div>
+
+      {/* Navigation for Small Screens */}
+      {isSmallScreen && (
+        <div className="flex justify-between mt-4">
+          <ArrowLeft
+            onClick={handlePrev}
+            className={`cursor-pointer ${
+              currentIndex === 0 ? "text-gray-300" : "text-black"
+            }`}
+          />
+          <ArrowRight
+            onClick={handleNext}
+            className={`cursor-pointer ${
+              currentIndex + visibleCards >= cardData.length
+                ? "text-gray-300"
+                : "text-black"
+            }`}
+          />
+        </div>
+      )}
     </div>
   );
 };
