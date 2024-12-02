@@ -48,12 +48,12 @@ const Contact = () => {
   ];
 
   return (
-    <div className="h-auto py-12 w-full flex items-center justify-center bg-gray-100">
+    <div className="h-auto w-full flex items-center justify-center bg-gray-100">
       <div className="flex flex-col items-center justify-center w-full ">
         {/* Background Image Section */}
         <div
           className="bg-[url('/contact.jpg')] bg-cover bg-center flex flex-col items-center justify-center text-center w-full flex-grow"
-          style={{ minHeight: "250px" }}
+          style={{ minHeight: "350px" }}
         >
           <h1 className="text-4xl text-white font-bold ">Connect with us</h1>
           <span className="text-lg  text-white">How can we help you?</span>
