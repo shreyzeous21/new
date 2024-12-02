@@ -48,13 +48,13 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-600 to-green-400 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl font-bold text-white text-center mb-12">
+    <div className=" h-auto bg-gradient-to-r from-blue-600 to-green-400 py-14 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-4xl font-bold text-white text-center mb-5">
           What Our Clients Say
         </h2>
         <div className="bg-white rounded-lg shadow-xl overflow-hidden">
-          <div className="relative h-[400px] sm:h-[300px] flex items-center justify-center px-8 sm:px-12">
+          <div className="relative h-[300px] sm:h-[300px] flex items-center justify-center px-8 sm:px-12">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -64,13 +64,13 @@ const Testimonial = () => {
                 transition={{ duration: 0.3 }}
                 className="text-center"
               >
-                <Quote className="h-12 w-12 mx-auto mb-6 text-blue-500" />
-                <p className="text-xl sm:text-2xl font-medium text-gray-700 mb-8">
+                <Quote className="h-12 w-12 mx-auto mb-6 text-green-500" />
+                <p className="text-xl sm:text-xl font-medium text-gray-700 mb-8">
                   {testimonials[currentIndex].quote}
                 </p>
                 <div className="flex items-center justify-center space-x-4">
                   <div className="text-left">
-                    <h3 className="text-lg font-semibold text-gray-900">
+                    <h3 className="text-sm font-semibold text-gray-900">
                       {testimonials[currentIndex].name}
                     </h3>
                   </div>
