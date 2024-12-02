@@ -128,13 +128,13 @@ const BlogHome = () => {
         <div className="relative">
           <div className="overflow-hidden">
             <AnimatePresence initial={false}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:h-[65vh] gap-6">
+              <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-6">
                 {newsItems
                   .slice(currentIndex, currentIndex + itemsToShow)
                   .map((item) => (
                     <motion.div
                       key={item.id}
-                      className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
+                      className="bg-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col"
                       style={{ aspectRatio: "1 / 1" }}
                       initial={{ opacity: 0, y: 50 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -180,7 +180,7 @@ const BlogHome = () => {
             </AnimatePresence>
           </div>
 
-          <div className=" flex justify-center space-x-4">
+          <div className=" mt-4 flex justify-center space-x-4">
             <button
               className={`p-2 rounded-full shadow-lg transition-colors duration-300 ${
                 isAtStart
