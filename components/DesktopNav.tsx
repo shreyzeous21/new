@@ -44,17 +44,15 @@ export function DesktopNav({ navItems, navItemsSec }: DesktopNavProps) {
             <ul className="flex flex-row items-center text-white">
               <LanguageDropdown />
               {navItemsSec.map((item) => (
-                <>
-                  <Link
-                    key={item.name}
-                    href={item.path}
-                    className={`p-4 border-r border-[#3f5280] ${
-                      pathname === item.path ? "bg-white text-green-500" : ""
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                </>
+                <Link
+                  key={item.name}
+                  href={item.path}
+                  className={`p-4 border-r border-[#3f5280] ${
+                    pathname === item.path ? "bg-white text-green-500" : ""
+                  }`}
+                >
+                  {item.name}
+                </Link>
               ))}
             </ul>
           </div>

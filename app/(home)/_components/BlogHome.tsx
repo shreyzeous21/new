@@ -145,10 +145,8 @@ const BlogHome = () => {
                         <Image
                           src={item.imageUrl}
                           alt={item.title}
-                          className="absolute inset-0 w-full h-full object-cover"
+                          className="absolute inset-0 w-auto h-[40vh] object-cover"
                           layout="fill"
-                          objectFit="cover"
-                          objectPosition="center"
                           quality={100}
                         />
                       </div>
