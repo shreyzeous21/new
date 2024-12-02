@@ -128,29 +128,31 @@ const BlogHome = () => {
         <div className="relative">
           <div className="overflow-hidden">
             <AnimatePresence initial={false}>
-              <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-6">
+              <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:h-[80vh] h-[50vh]  gap-6">
                 {newsItems
                   .slice(currentIndex, currentIndex + itemsToShow)
                   .map((item) => (
                     <motion.div
                       key={item.id}
-                      className="bg-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer"
-                      style={{ aspectRatio: "1 / 1" }}
+                      className="bg-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col"
+                      // style={{ aspectRatio: "1 / 2" }}
                       initial={{ opacity: 0, x: 100 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -100 }}
-                      transition={{ duration: 0.1 }}
+                      transition={{ duration: 0.4 }}
                     >
                       <div className="relative h-1/2">
                         <Image
                           src={item.imageUrl}
                           alt={item.title}
-                          className="absolute inset-0 w-auto h-[40vh] object-cover"
+                          className="absolute inset-0 w-full h-full object-cover"
                           layout="fill"
+                          objectFit="cover"
+                          objectPosition="center"
                           quality={100}
                         />
                       </div>
-                      <div className="p-4 flex group flex-col justify-between flex-grow ">
+                      <div className="p-4 flex group flex-col justify-between flex-grow">
                         <div>
                           <p className="text-sm text-gray-500 mb-2">
                             {item.date}
