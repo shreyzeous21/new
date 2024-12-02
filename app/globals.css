@@ -96,3 +96,21 @@ button:hover .circle .icon.arrow {
 button:hover .button-text {
   color: #fff;
 }
+
+
+
+
+
+
+/* Default pagination dots */
+.swiper-pagination-bullet {
+  background-color: #d1d5db; /* Light gray */
+  opacity: 0.5;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+/* Active pagination dot (green) */
+.swiper-pagination-bullet-active {
+  background-color: #69bf3c; /* Green */
+  opacity: 1;
+}
