@@ -134,7 +134,7 @@ const BlogHome = () => {
                   .map((item) => (
                     <motion.div
                       key={item.id}
-                      className="bg-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col"
+                      className="bg-gray-200 rounded-lg overflow-hidden flex flex-col"
                       // style={{ aspectRatio: "1 / 2" }}
                       initial={{ opacity: 0, x: 100 }}
                       animate={{ opacity: 1, x: 0 }}

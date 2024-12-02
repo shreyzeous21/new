@@ -131,7 +131,7 @@ const DigitalPartner = () => {
             <motion.div
               key={card.id}
               whileHover={{ scale: 1.05, y: -10 }}
-              className="bg-gray-100 mt-5 rounded-lg shadow-lg p-6 w-full sm:w-[20vw]   lg:w-[25vw] flex-shrink-0 h-[320px] flex flex-col justify-between"
+              className="bg-gray-100 mt-5 rounded-lg shadow-lg p-6 w-full sm:w-[20vw] lg:w-[24vw] flex-shrink-0 h-[320px] flex flex-col justify-between"
             >
               <img
                 src={card.icon}
