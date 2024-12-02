@@ -128,7 +128,7 @@ const BlogHome = () => {
         <div className="relative">
           <div className="overflow-hidden">
             <AnimatePresence initial={false}>
-              <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:h-[70vh] h-[50vh]  gap-6">
+              <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:h-[70vh] h-[50vh] ">
                 {newsItems
                   .slice(currentIndex, currentIndex + itemsToShow)
                   .map((item) => (
