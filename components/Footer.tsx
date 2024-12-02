@@ -179,7 +179,7 @@ const Footer = () => {
         {/* 1 - Home Link */}
         <hr className="font-semibold text-sm py-5" />
         {/* 2 - Capabilities Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-1  lg:grid-cols-4 gap-4 mb-6">
           {/* col 1 */}
 
           <div className="">
@@ -189,7 +189,7 @@ const Footer = () => {
                 alt=""
                 className="w-[15vw] h-auto"
               />
-              <div className="py-2 w-full flex mx-4 flex-col">
+              <div className="py-2 w-full flex  flex-col">
                 <h1 className="text-xl font-semibold">
                   Green Revolution Cooling, Inc.
                 </h1>
@@ -221,7 +221,7 @@ const Footer = () => {
             {emp.map((emp, index) => (
               <div key={index} className="mb-4 ">
                 <h1 className="mb-2 text-xl text-[#0b0a23]">{emp.title}</h1>
-                <ul>
+                <ul>aaa
                   {emp.links.map((link, linkIndex) => (
                     <Link key={linkIndex} href={link.href}>
                       <li className="">{link.text}</li>
