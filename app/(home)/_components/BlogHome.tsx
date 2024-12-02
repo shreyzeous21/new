@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeftCircle, ArrowRightCircle, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const newsItems = [
   {
@@ -118,7 +119,7 @@ const BlogHome = () => {
   const isAtEnd = currentIndex + itemsToShow >= newsItems.length;
 
   return (
-    <div className="py-10 px-4 sm:px-6 lg:px-8">
+    <div className="py-14 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold text-[#243765] mb-12 text-center lg:text-left">
           Latest News
@@ -127,7 +128,7 @@ const BlogHome = () => {
         <div className="relative">
           <div className="overflow-hidden">
             <AnimatePresence initial={false}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:h-[65vh] gap-6">
                 {newsItems
                   .slice(currentIndex, currentIndex + itemsToShow)
                   .map((item) => (
@@ -141,10 +142,14 @@ const BlogHome = () => {
                       transition={{ duration: 0.5 }}
                     >
                       <div className="relative h-1/2">
-                        <img
+                        <Image
                           src={item.imageUrl}
                           alt={item.title}
                           className="absolute inset-0 w-full h-full object-cover"
+                          layout="fill"
+                          objectFit="cover"
+                          objectPosition="center"
+                          quality={100}
                         />
                       </div>
                       <div className="p-4 flex flex-col justify-between flex-grow">
@@ -175,7 +180,7 @@ const BlogHome = () => {
             </AnimatePresence>
           </div>
 
-          <div className="mt-8 flex justify-center space-x-4">
+          <div className=" flex justify-center space-x-4">
             <button
               className={`p-2 rounded-full shadow-lg transition-colors duration-300 ${
                 isAtStart
