@@ -37,7 +37,7 @@ const TextParallaxContent = ({
         paddingRight: IMG_PADDING,
       }}
     >
-      <div className="relative h-[150vh]">
+      <div className="relative h-[100vh]">
         <StickyImage imgUrl={imgUrl} />
         <OverlayCopy heading={heading} subheading={subheading} />
       </div>
@@ -92,7 +92,7 @@ const OverlayCopy = ({
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [250, -250]);
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
   const opacity = useTransform(scrollYProgress, [0.25, 0.5, 0.75], [0, 1, 0]);
 
   return (
@@ -113,7 +113,7 @@ const OverlayCopy = ({
 };
 
 const ExampleContent = () => (
-  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 py-4 md:grid-cols-12">
+  <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-4 md:grid-cols-12">
     <h2 className="col-span-1 text-[#243765] text-4xl font-bold md:col-span-4">
       Join Our Team Today
     </h2>
