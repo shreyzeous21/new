@@ -175,7 +175,7 @@ const Footer = () => {
 
   return (
     <footer className="h-auto text-black justify-center lg:mx-auto flex flex-col bg-gray-100">
-      <div className="flex flex-col lg:mx-auto max-w-7xl mx-4 lg:w-full">
+      <div className="flex flex-col lg:mx-auto max-w-6xl mx-4 lg:w-full">
         {/* 1 - Home Link */}
         <hr className="font-semibold text-sm py-5" />
         {/* 2 - Capabilities Grid */}

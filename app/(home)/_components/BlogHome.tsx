@@ -1,15 +1,15 @@
 "use client";
 
-import { ArrowLeftCircle, ArrowRightCircle, ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeftCircle, ArrowRightCircle, ArrowUpRight } from "lucide-react";
 
 const newsItems = [
   {
     id: 1,
     title:
-      "Comparing Apples to Apples: Fairly Assessing Single-Phase Immersion’s Cooling Capabilities Versus Air and DLC",
+      "Comparing Apples to Apples: Fairly Assessing Single-Phase Immersion's Cooling Capabilities Versus Air and DLC",
     date: "November 05, 2024",
     imageUrl: "/blog/blog1.jpg",
     link: "/shrey",
@@ -49,7 +49,7 @@ const newsItems = [
     imageUrl:
       "https://www.grcooling.com/wp-content/uploads/tfhs-blog-image_-1-1.jpg",
     link: "/shrey",
-    text: "In today’s data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
+    text: "In today's data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ const newsItems = [
     date: "November 12, 2024",
     imageUrl: "/img2.png",
     link: "/shrey",
-    text: "In today’s data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
+    text: "In today's data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
   },
   {
     id: 7,
@@ -65,7 +65,7 @@ const newsItems = [
     date: "November 12, 2024",
     imageUrl: "/img3.png",
     link: "/shrey",
-    text: "In today’s data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
+    text: "In today's data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
   },
   {
     id: 8,
@@ -73,7 +73,7 @@ const newsItems = [
     date: "November 12, 2024",
     imageUrl: "/img4.png",
     link: "/shrey",
-    text: "In today’s data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
+    text: "In today's data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
   },
 ];
 
@@ -118,92 +118,87 @@ const BlogHome = () => {
   const isAtEnd = currentIndex + itemsToShow >= newsItems.length;
 
   return (
-    <div className="h-auto flex mx-auto max-w-7xl w-full py-10 px-4">
-      <div className="w-full flex flex-col">
-        <h1 className="font-bold text-4xl text-[#243765] mb-6 text-center lg:text-left">
+    <div className="py-10 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-4xl font-bold text-[#243765] mb-12 text-center lg:text-left">
           Latest News
         </h1>
 
-        {/* Carousel Section */}
         <div className="relative">
-          <div className="flex gap-6 overflow-hidden">
+          <div className="overflow-hidden">
             <AnimatePresence initial={false}>
-              {newsItems
-                .slice(currentIndex, currentIndex + itemsToShow)
-                .map((item) => (
-                  <motion.div
-                    key={item.id}
-                    className="bg-gray-100 rounded-lg overflow-hidden w-full lg:w-[28vw] flex-shrink-0 lg:h-[60vh] h-[60vh] flex flex-col"
-                    initial={{ opacity: 0, x: 100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -100 }}
-                    transition={{
-                      duration: 0.5,
-                      ease: "backIn",
-                    }}
-                  >
-                    {/* Image Section */}
-                    <div
-                      className="flex-shrink-0 h-[40%] bg-cover bg-center transform transition-transform duration-300 ease-in-out hover:scale-110"
-                      style={{ backgroundImage: `url(${item.imageUrl})` }}
-                    ></div>
-
-                    {/* Content Section */}
-                    <div className="flex flex-col justify-between p-4 h-[40vh] group cursor-pointer">
-                      <p className="text-gray-500 text-sm mt-2">{item.date}</p>
-                      <h2
-                        className="text-lg font-semibold text-black group-hover:text-[#69bf3c] leading-tight"
-                        title={item.title}
-                      >
-                        {item.title.length > 50
-                          ? `${item.title.substring(0, 50)}...`
-                          : item.title}
-                      </h2>
-                      <p className="text-sm text-black py-2 ">
-                        {item.text.length > 150
-                          ? `${item.text?.substring(0, 150)}...`
-                          : item.text}
-                      </p>
-                      {item.link && (
-                        <Link
-                          href={item.link}
-                          className="mt-auto flex group-hover:text-[#69bf3c]"
-                        >
-                          Learn more
-                          <ArrowUpRight className="inline" />
-                        </Link>
-                      )}
-                    </div>
-                  </motion.div>
-                ))}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {newsItems
+                  .slice(currentIndex, currentIndex + itemsToShow)
+                  .map((item) => (
+                    <motion.div
+                      key={item.id}
+                      className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
+                      style={{ aspectRatio: "1 / 1" }}
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -50 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <div className="relative h-1/2">
+                        <img
+                          src={item.imageUrl}
+                          alt={item.title}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="p-4 flex flex-col justify-between flex-grow">
+                        <div>
+                          <p className="text-sm text-gray-500 mb-2">
+                            {item.date}
+                          </p>
+                          <h2 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-[#69bf3c]">
+                            {item.title}
+                          </h2>
+                          <p className="text-sm text-gray-600 mb-4 line-clamp-3">
+                            {item.text}
+                          </p>
+                        </div>
+                        {item.link && (
+                          <Link
+                            href={item.link}
+                            className="inline-flex items-center text-[#69bf3c] hover:text-[#243765] transition-colors duration-300"
+                          >
+                            Learn more
+                            <ArrowUpRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        )}
+                      </div>
+                    </motion.div>
+                  ))}
+              </div>
             </AnimatePresence>
           </div>
-        </div>
 
-        <div className="mt-6 flex justify-between items-center">
-          {/* Navigation Buttons */}
-          <div className="flex gap-4 items-center px-4">
+          <div className="mt-8 flex justify-center space-x-4">
             <button
-              className={`bg-white p-2 rounded-full shadow-lg ${
+              className={`p-2 rounded-full shadow-lg transition-colors duration-300 ${
                 isAtStart
-                  ? "cursor-not-allowed text-gray-400"
-                  : "hover:bg-gray-200 text-black"
+                  ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                  : "bg-white text-[#243765] hover:bg-[#69bf3c] hover:text-white"
               }`}
               onClick={handlePrev}
               disabled={isAtStart}
+              aria-label="Previous news items"
             >
-              <ArrowLeftCircle />
+              <ArrowLeftCircle className="h-6 w-6" />
             </button>
             <button
-              className={`bg-white p-2 rounded-full shadow-lg ${
+              className={`p-2 rounded-full shadow-lg transition-colors duration-300 ${
                 isAtEnd
-                  ? "cursor-not-allowed text-gray-400"
-                  : "hover:bg-gray-200 text-black"
+                  ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                  : "bg-white text-[#243765] hover:bg-[#69bf3c] hover:text-white"
               }`}
               onClick={handleNext}
               disabled={isAtEnd}
+              aria-label="Next news items"
             >
-              <ArrowRightCircle />
+              <ArrowRightCircle className="h-6 w-6" />
             </button>
           </div>
         </div>
