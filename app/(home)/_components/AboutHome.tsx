@@ -17,7 +17,7 @@ const AboutHome = () => {
   ];
 
   return (
-    <div className="py-10 lg:w-full h-auto flex flex-col max-w-6xl lg:mx-auto mx-4 justify-center">
+    <div className="py-14 lg:w-full h-auto flex flex-col max-w-6xl lg:mx-auto mx-4 justify-center">
       {/* Section Title */}
       <div className="mb-6 gap-5">
         <h2 className="text-4xl font-bold text-[#243765] ">About GRC</h2>
@@ -33,7 +33,7 @@ const AboutHome = () => {
           <a
             key={index}
             href={card.link}
-            className="border hover:text-[#69bf3c] border-gray-300 bg-white shadow-sm p-4 flex items-center justify-between hover:shadow-md transition-shadow duration-300"
+            className="border hover:text-[#69bf3c] border-gray-300 bg-white shadow-sm p-6 flex items-center justify-between hover:shadow-md transition-shadow duration-300"
           >
             {/* Card Title */}
             <h3 className="text-sm font-medium ">{card.title}</h3>
