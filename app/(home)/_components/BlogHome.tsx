@@ -134,12 +134,12 @@ const BlogHome = () => {
                   .map((item) => (
                     <motion.div
                       key={item.id}
-                      className="bg-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col"
+                      className="bg-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer"
                       style={{ aspectRatio: "1 / 1" }}
-                      initial={{ opacity: 0, y: 50 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -50 }}
-                      transition={{ duration: 0.5 }}
+                      initial={{ opacity: 0, x: 100 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -100 }}
+                      transition={{ duration: 0.4 }}
                     >
                       <div className="relative h-1/2">
                         <Image
@@ -152,12 +152,12 @@ const BlogHome = () => {
                           quality={100}
                         />
                       </div>
-                      <div className="p-4 flex flex-col justify-between flex-grow">
+                      <div className="p-4 flex group flex-col justify-between flex-grow ">
                         <div>
                           <p className="text-sm text-gray-500 mb-2">
                             {item.date}
                           </p>
-                          <h2 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-[#69bf3c]">
+                          <h2 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 s group-hover:text-[#69bf3c] transition-colors duration-300">
                             {item.title}
                           </h2>
                           <p className="text-sm text-gray-600 mb-4 line-clamp-3">
@@ -167,7 +167,7 @@ const BlogHome = () => {
                         {item.link && (
                           <Link
                             href={item.link}
-                            className="inline-flex items-center text-[#69bf3c] hover:text-[#243765] transition-colors duration-300"
+                            className="inline-flex items-center text-[#243765] group-hover:text-[#69bf3c] transition-colors duration-300"
                           >
                             Learn more
                             <ArrowUpRight className="ml-2 h-4 w-4" />
