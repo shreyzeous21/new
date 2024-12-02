@@ -10,8 +10,6 @@ const LanguageDropdown = () => {
   const languages = [
     { code: "en", label: "English" },
     { code: "ae", label: "Arabic" },
-    { code: "fr", label: "French" },
-    { code: "de", label: "German" },
     { code: "zh", label: "Chinese" },
   ];
 

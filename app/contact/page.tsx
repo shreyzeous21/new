@@ -60,7 +60,7 @@ const Contact = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="container  max-w-screen-lg grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 justify-center mt-12">
+        <div className="container py-14  max-w-screen-lg grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 justify-center ">
           {cardData.map((card, idx) => (
             <div
               key={idx}

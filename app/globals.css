@@ -99,11 +99,10 @@ button:hover .button-text {
 
 /* swiper-custom.css */
 .swiper-pagination-bullet {
-  background-color: #0000008c; /* Change this to your desired color */
+  background-color: #fff; /* Change this to your desired color */
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  opacity: 0.5;
   margin-top: 10px;
 }
 
