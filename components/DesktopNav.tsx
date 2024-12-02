@@ -28,27 +28,29 @@ export function DesktopNav({ navItems, navItemsSec }: DesktopNavProps) {
           <div className="flex flex-row justify-between items-center bg-[#243865]">
             <ul className="flex flex-row items-center w-full text-white">
               {navItems.map((item) => (
-                <li
+                <Link
                   key={item.name}
+                  href={item.path}
                   className={`p-4 border-r border-[#3f5280] items-center ${
                     pathname === item.path ? "bg-white text-green-500" : ""
                   }`}
                 >
-                  <Link href={item.path}>{item.name}</Link>
-                </li>
+                  {item.name}
+                </Link>
               ))}
             </ul>
 
             <ul className="flex flex-row items-center text-white">
               {navItemsSec.map((item) => (
-                <li
+                <Link
                   key={item.name}
+                  href={item.path}
                   className={`p-4 border-r border-[#3f5280] ${
                     pathname === item.path ? "bg-white text-[#243865]" : ""
                   }`}
                 >
-                  <Link href={item.path}>{item.name}</Link>
-                </li>
+                  {item.name}
+                </Link>
               ))}
             </ul>
           </div>
