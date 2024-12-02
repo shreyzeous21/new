@@ -4,7 +4,7 @@ const FooterUpper = () => {
   return (
     <div className="w-full h-[40vh]  flex-col mx-auto justify-center bg-gradient-to-tr from-green-500  to-blue-900 flex">
       <div className="flex lg:flex-row flex-col max-w-6xl lg:mx-auto mx-5  h-full justify-center lg:justify-between items-center gap-3  lg:w-full">
-        <div className="items-center lg:text-left text-center flex flex-col ">
+        <div className=" lg:text-left text-center flex flex-col ">
           <h1 className="text-4xl text-white font-bold">
             Power Up & Cool Down
           </h1>
