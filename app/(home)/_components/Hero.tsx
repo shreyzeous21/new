@@ -114,8 +114,8 @@ const Hero = () => {
       {/* Text Section */}
       <div
         className="absolute bottom-10 left-4 w-[90%] py-10 h-auto 
-      lg:top-1/2 lg:left-10  md:w-1/2 md:h-1/6 
-      z-10 flex flex-col  justify-center p-4 md:p-6"
+      lg:top-1/2 lg:left-20  md:w-1/2 md:h-1/6 
+      z-10 flex flex-col justify-center p-4 md:p-6"
       >
         <h1 className="text-5xl font-bold mb-8">
           Redefining the Efficiency and Sustainability of Data Center Cooling
