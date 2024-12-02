@@ -17,7 +17,7 @@ const LanguageDropdown = () => {
   const toggleDropdown = () => setIsOpen((prev) => !prev);
 
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative z-10 inline-block text-left">
       {/* Trigger Button */}
       <button
         onClick={toggleDropdown}
