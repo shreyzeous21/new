@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["www.grcooling.com"],
   },
-  output: "export",
+  // output: "export",
   typescript: {
     ignoreBuildErrors: true,
   },
