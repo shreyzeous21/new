@@ -4,8 +4,9 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
     remotePatterns: [{ protocol: 'https', hostname: 'www.grcooling.com' }],
+    unoptimized: true,
   },
-  // output: "export",
+  output: "export",
   typescript: {
     ignoreBuildErrors: true,
   },
