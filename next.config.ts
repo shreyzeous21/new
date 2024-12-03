@@ -5,7 +5,6 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["www.grcooling.com"],
   },
-  useFileSystemPublicRoutes: false,
   output: "export",
   typescript: {
     ignoreBuildErrors: true,
