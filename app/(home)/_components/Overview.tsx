@@ -26,11 +26,7 @@ const Overview = () => {
           </button>
         </div>
         <div className="lg:w-1/2  h-auto">
-          <img
-            src="https://www.grcooling.com/wp-content/uploads/shutterstock-2256246595_9d906fb88d6058c9b3b71d9f5decafd7_2000.jpg"
-            alt=""
-            className="rounded-lg"
-          />
+          <img src="/overview.jpg" alt="" className="rounded-lg" />
         </div>
       </div>
     </div>
