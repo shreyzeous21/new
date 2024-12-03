@@ -44,16 +44,6 @@ const newsItems = [
   },
   {
     id: 5,
-    title:
-      "Targeted Flow Heat Sinks: A Simplified Approach to Cooling High-Powered Processors",
-    date: "September 17, 2024",
-    imageUrl:
-      "https://www.grcooling.com/wp-content/uploads/tfhs-blog-image_-1-1.jpg",
-    link: "/shrey",
-    text: "In today's data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
-  },
-  {
-    id: 6,
     title: "Innovations in Data Center Architecture and Design",
     date: "November 12, 2024",
     imageUrl: "/img2.png",
@@ -61,7 +51,7 @@ const newsItems = [
     text: "In today's data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
   },
   {
-    id: 7,
+    id: 6,
     title: "Exploring Sustainable Solutions for IT Infrastructure",
     date: "November 12, 2024",
     imageUrl: "/img3.png",
@@ -69,7 +59,7 @@ const newsItems = [
     text: "In today's data-intensive world, the demand for high-performance processors has skyrocketed. These powerful chips generate significant amounts of heat, making efficient cooling a critical challenge. Traditional cooling methods often...",
   },
   {
-    id: 8,
+    id: 7,
     title: "The Future of Data Centers: Trends and Innovations",
     date: "November 12, 2024",
     imageUrl: "/img4.png",
