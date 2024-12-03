@@ -97,26 +97,19 @@ button:hover .button-text {
   color: #fff;
 }
 
-/* globals.css or a dedicated CSS file */
-
-/* Change bullet size */
+/* swiper-custom.css */
 .swiper-pagination-bullet {
-  width: 12px; /* Increase or decrease size */
+  background-color: #fff; /* Change this to your desired color */
+  width: 12px;
   height: 12px;
-  background-color: #69bf3c; /* Default color */
-  opacity: 0.7; /* Default opacity */
-  transition: all 0.3s ease;
+  border-radius: 50%;
+  margin-top: 10px;
 }
 
-/* Highlight active bullet */
 .swiper-pagination-bullet-active {
-  width: 16px; /* Larger size for active */
-  height: 16px;
-  background-color: #ffffff; /* Active color */
-  opacity: 1;
+  background-color: #69bf3c; /* Change this to your desired active color */
 }
 
-/* Adjust spacing */
-.swiper-pagination {
-  bottom: 10px; /* Position from the bottom */
+.mySwiper {
+  padding-bottom: 50px; /* Add space below the swiper for pagination */
 }
